@@ -1,0 +1,36 @@
+#import的本质
+import test1
+#打开test1.py解释所有的代码并把代码赋值给test1这个变量
+#from import的本质
+from test1 import func1
+#打开test1,取出func1这个变量放到这个文件中来
+#导入的形式
+import test1 #导入单个文件
+import test1,test2 #导入多个文件
+import test1 as test #导入文件,名称自定义
+from test1 import func1 #导入文件下的一个方法
+from . import test1
+from test1 import * #导入文件下的所有方法(不要用)
+
+#导入包的本质
+有__init__.py的文件才是包文件
+导入包的本质就是执行包下面的__init__.py文件
+可以在__init__.py文件中导入同级目录的模块(from . import test1)
+#import路径搜索
+import sys
+for i in sys.path: #sys.path下的所有路径进行搜索
+    print(i)
+#添加import路径
+import os
+os.path.abspath(__file__)#打印当前文件绝对路径
+os.path.dirname(os.path.abspath(__file__))#获取当前文件父级路径
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))#添加当前父级路径到Python环境变量中
+sys.path.insert(os.path.dirname(os.path.abspath(__file__)))#优化
+#模块的优化
+#import test1   #本质获取所有代码
+from test1 import test #本质检索test1下面的test放到这个文件中
+def func1():
+    #test1.test() #这个方法存在检索
+    test()        #这个效率要高
+for i in range(10000):
+    func1()
