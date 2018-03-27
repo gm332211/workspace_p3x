@@ -7,34 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66e5b46c-156f-4c85-89b3-35d1031da26d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/day6/class的反射.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day6/class的成员.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day6/class的起源.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day7/异常处理.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day7/收发文件版socket/pycrypto-2.6.tar.gz" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day7/简单socket/socket客户端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day7/简单socket/socket服务端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/模块/其他模块/importlib模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/模块/类的使用/class的反射.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/模块/类的使用/class的多态.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/模块/类的使用/class的封装.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/模块/类的使用/class的成员.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/模块/类的使用/class的方法.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/模块/类的使用/class的起源.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/模块/类的使用/class继承案例.py" />
-      <change beforePath="$PROJECT_DIR$/day6/class继承案例.py" afterPath="$PROJECT_DIR$/day6/class继承案例.py" />
-      <change beforePath="$PROJECT_DIR$/day7/执行命令版socket/socket客户端.py" afterPath="$PROJECT_DIR$/day7/执行命令版socket/socket客户端.py" />
-      <change beforePath="$PROJECT_DIR$/day7/执行命令版socket/socket服务端.py" afterPath="$PROJECT_DIR$/day7/执行命令版socket/socket服务端.py" />
-      <change beforePath="$PROJECT_DIR$/day7/收发文件版socket/socket客户端.py" afterPath="$PROJECT_DIR$/day7/收发文件版socket/socket客户端.py" />
-      <change beforePath="$PROJECT_DIR$/day7/收发文件版socket/socket服务端.py" afterPath="$PROJECT_DIR$/day7/收发文件版socket/socket服务端.py" />
-      <change beforePath="$PROJECT_DIR$/模块/文件处理/configparser模块.py" afterPath="$PROJECT_DIR$/模块/数据存储/configparser模块.py" />
-      <change beforePath="$PROJECT_DIR$/模块/文件处理/file处理.py" afterPath="$PROJECT_DIR$/模块/数据存储/file处理.py" />
-      <change beforePath="$PROJECT_DIR$/模块/文件处理/json模块pickle模块.py" afterPath="$PROJECT_DIR$/模块/数据存储/json模块pickle模块.py" />
-      <change beforePath="$PROJECT_DIR$/模块/文件处理/shelve模块.py" afterPath="$PROJECT_DIR$/模块/数据存储/shelve模块.py" />
-      <change beforePath="$PROJECT_DIR$/模块/文件处理/shutil模块.py" afterPath="$PROJECT_DIR$/模块/数据存储/shutil模块.py" />
-      <change beforePath="$PROJECT_DIR$/模块/文件处理/xml处理.py" afterPath="$PROJECT_DIR$/模块/数据存储/xml处理.py" />
-      <change beforePath="$PROJECT_DIR$/模块/类的使用/class模块.py" afterPath="$PROJECT_DIR$/模块/类的使用/class模块.py" />
-      <change beforePath="$PROJECT_DIR$/模块/类的使用/class的继承.py" afterPath="$PROJECT_DIR$/模块/类的使用/class的继承.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/day7/收发文件版socket/socket_md5客户端.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/day7/收发文件版socket/socket服务端_md5.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/day7/简单的socket_server/socket_server服务端.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/day7/简单的socket_server/socket客户端.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,81 +21,63 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/workspace_p3_x$class.coverage" NAME="class的起源 Coverage Results" MODIFIED="1520878222535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day6" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$socket__2_.coverage" NAME="socket服务端 (2) Coverage Results" MODIFIED="1521988614232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7/收发文件版socket" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$for.coverage" NAME="for Coverage Results" MODIFIED="1514447902113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$socket_md5.coverage" NAME="socket_md5客户端 Coverage Results" MODIFIED="1522187403478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7/收发文件版socket" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_for__func_test.coverage" NAME="Unittests for 装饰器.func_test Coverage Results" MODIFIED="1515244621054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$json_and_pick.coverage" NAME="json_and_pick Coverage Results" MODIFIED="1515336517237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$guess_age_for.coverage" NAME="guess_age_for Coverage Results" MODIFIED="1514447368021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$shopping_car.coverage" NAME="shopping_car Coverage Results" MODIFIED="1514562629752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$configparser.coverage" NAME="configparser模块 Coverage Results" MODIFIED="1516443647861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5/package_test" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_in_func_function_py.coverage" NAME="Unittests in func_function.py Coverage Results" MODIFIED="1515218945172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$gather_function.coverage" NAME="gather_function Coverage Results" MODIFIED="1514790450278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$configparser__1_.coverage" NAME="configparser模块 (1) Coverage Results" MODIFIED="1516444256586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$socket__1_.coverage" NAME="socket客户端 (1) Coverage Results" MODIFIED="1521988615353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7/收发文件版socket" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_for_test1_test.coverage" NAME="Unittests for test1.test Coverage Results" MODIFIED="1515246186242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$os.coverage" NAME="os模块 Coverage Results" MODIFIED="1515855435086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$list_function.coverage" NAME="list_function Coverage Results" MODIFIED="1514559758968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$socket_server.coverage" NAME="socket_server服务端 Coverage Results" MODIFIED="1522189948537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7/简单的socket_server" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_in__py.coverage" NAME="Unittests in 装饰器.py Coverage Results" MODIFIED="1515244832484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$sys.coverage" NAME="sys模块 Coverage Results" MODIFIED="1516425235242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$.coverage" NAME="持久化模块 Coverage Results" MODIFIED="1520946189552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$auth.coverage" NAME="auth Coverage Results" MODIFIED="1515488589330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Atm/core" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$__1_.coverage" NAME="装饰器 (1) Coverage Results" MODIFIED="1515247871339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$guess_age.coverage" NAME="guess_age Coverage Results" MODIFIED="1514447077090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$file_change.coverage" NAME="file_change Coverage Results" MODIFIED="1514896910304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$class.coverage" NAME="class的起源 Coverage Results" MODIFIED="1520878222535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day6" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$json_and_pickle.coverage" NAME="json_and_pickle Coverage Results" MODIFIED="1515337212451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$format_input.coverage" NAME="format_input Coverage Results" MODIFIED="1514444653269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$sys_mod.coverage" NAME="sys_mod Coverage Results" MODIFIED="1514549535195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$socket__2_.coverage" NAME="socket服务端 (2) Coverage Results" MODIFIED="1521988614232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7/收发文件版socket" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$for.coverage" NAME="for Coverage Results" MODIFIED="1514447902113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$atm.coverage" NAME="atm Coverage Results" MODIFIED="1515601756115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Atm/bin" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_for__func_test.coverage" NAME="Unittests for 装饰器.func_test Coverage Results" MODIFIED="1515244621054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$hashlib.coverage" NAME="hashlib模块 Coverage Results" MODIFIED="1516446278736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$hashlib.coverage" NAME="hashlib模块 Coverage Results" MODIFIED="1522187297381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/模块/数据处理" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$xml__1_.coverage" NAME="xml处理 (1) Coverage Results" MODIFIED="1516439188679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/模块/文件处理" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$encoding_and_decoding.coverage" NAME="encoding_and_decoding Coverage Results" MODIFIED="1515046802416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$func_function.coverage" NAME="func_function Coverage Results" MODIFIED="1515244706389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$json_and_pick.coverage" NAME="json_and_pick Coverage Results" MODIFIED="1515336517237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$list.coverage" NAME="list处理 Coverage Results" MODIFIED="1516439103875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/模块/数据处理" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$guess_age_for.coverage" NAME="guess_age_for Coverage Results" MODIFIED="1514447368021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$shopping_car.coverage" NAME="shopping_car Coverage Results" MODIFIED="1514562629752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$setting.coverage" NAME="setting Coverage Results" MODIFIED="1515486621104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Atm/conf" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$configparser.coverage" NAME="configparser模块 Coverage Results" MODIFIED="1516443647861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5/package_test" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$socket.coverage" NAME="socket客户端 Coverage Results" MODIFIED="1521982334628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7/执行命令版socket" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_in_func_function_py.coverage" NAME="Unittests in func_function.py Coverage Results" MODIFIED="1515218945172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
+    <SUITE FILE_PATH="coverage/workspace_p3_x$socket.coverage" NAME="socket客户端 Coverage Results" MODIFIED="1522189950045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7/简单的socket_server" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$shelve.coverage" NAME="shelve模块 Coverage Results" MODIFIED="1516426541609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$gather_function.coverage" NAME="gather_function Coverage Results" MODIFIED="1514790450278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$configparser__1_.coverage" NAME="configparser模块 (1) Coverage Results" MODIFIED="1516444256586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$test_import.coverage" NAME="test_import Coverage Results" MODIFIED="1515686678629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$add_user__1_.coverage" NAME="add_user (1) Coverage Results" MODIFIED="1515340497552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Atm/db/file_users" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$hello_world.coverage" NAME="hello_world Coverage Results" MODIFIED="1514372738604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$main.coverage" NAME="main Coverage Results" MODIFIED="1515488632672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Atm/core" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$socket__1_.coverage" NAME="socket客户端 (1) Coverage Results" MODIFIED="1521988615353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7/收发文件版socket" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_for_test1_test.coverage" NAME="Unittests for test1.test Coverage Results" MODIFIED="1515246186242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$os.coverage" NAME="os模块 Coverage Results" MODIFIED="1515855435086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$db_api.coverage" NAME="db_api Coverage Results" MODIFIED="1515488386492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Atm/core" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$re.coverage" NAME="re正则模块 Coverage Results" MODIFIED="1517118880562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$list_function.coverage" NAME="list_function Coverage Results" MODIFIED="1514559758968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_in__py.coverage" NAME="Unittests in 装饰器.py Coverage Results" MODIFIED="1515244832484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$sys.coverage" NAME="sys模块 Coverage Results" MODIFIED="1516425235242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$Unittests_in_test1_py.coverage" NAME="Unittests in test1.py Coverage Results" MODIFIED="1515246224036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$string_function.coverage" NAME="string_function Coverage Results" MODIFIED="1514636300517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$1.coverage" NAME="1 Coverage Results" MODIFIED="1514372966702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$file_function.coverage" NAME="file_function Coverage Results" MODIFIED="1514793023903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$xml.coverage" NAME="xml处理 Coverage Results" MODIFIED="1516439776364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$dict_function.coverage" NAME="dict_function Coverage Results" MODIFIED="1514775733840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$.coverage" NAME="持久化模块 Coverage Results" MODIFIED="1520946189552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$auth.coverage" NAME="auth Coverage Results" MODIFIED="1515488589330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Atm/core" />
     <SUITE FILE_PATH="coverage/workspace_p3_x$add_user.coverage" NAME="add_user Coverage Results" MODIFIED="1515497277018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Atm/db/account" />
-    <SUITE FILE_PATH="coverage/workspace_p3_x$__1_.coverage" NAME="装饰器 (1) Coverage Results" MODIFIED="1515247871339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day3" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="socket服务端.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day7/收发文件版socket/socket服务端.py">
+      <file leaf-file-name="socket_server服务端.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day7/简单的socket_server/socket_server服务端.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="socket客户端.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day7/收发文件版socket/socket客户端.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="str处理.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/模块/数据处理/str处理.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="420">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,10 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/day5/package_test/test1.py" />
-        <option value="$PROJECT_DIR$/day5/package_test/__init__.py" />
-        <option value="$PROJECT_DIR$/day5/test_import.py" />
-        <option value="$PROJECT_DIR$/day5/导入模块的本质" />
         <option value="$PROJECT_DIR$/day5/随机模块.py" />
         <option value="$PROJECT_DIR$/day5/os模块.py" />
         <option value="$PROJECT_DIR$/day5/test.txt" />
@@ -211,6 +166,10 @@
         <option value="$PROJECT_DIR$/day7/执行命令版socket/socket客户端.py" />
         <option value="$PROJECT_DIR$/day7/收发文件版socket/socket服务端.py" />
         <option value="$PROJECT_DIR$/day7/收发文件版socket/socket客户端.py" />
+        <option value="$PROJECT_DIR$/day7/收发文件版socket/socket服务端_md5.py" />
+        <option value="$PROJECT_DIR$/day7/收发文件版socket/socket_md5客户端.py" />
+        <option value="$PROJECT_DIR$/day7/简单的socket_server/socket客户端.py" />
+        <option value="$PROJECT_DIR$/day7/简单的socket_server/socket_server服务端.py" />
       </list>
     </option>
   </component>
@@ -227,10 +186,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="446" />
-    <option name="y" value="101" />
+    <option name="x" value="372" />
+    <option name="y" value="94" />
     <option name="width" value="1439" />
-    <option name="height" value="906" />
+    <option name="height" value="908" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -250,7 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,37 +225,13 @@
             <path>
               <item name="workspace_p3.x" type="b2602c69:ProjectViewProjectNode" />
               <item name="workspace_p3.x" type="462c0819:PsiDirectoryNode" />
-              <item name="day7" type="462c0819:PsiDirectoryNode" />
-              <item name="执行命令版socket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="workspace_p3.x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workspace_p3.x" type="462c0819:PsiDirectoryNode" />
-              <item name="day7" type="462c0819:PsiDirectoryNode" />
-              <item name="收发文件版socket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="workspace_p3.x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workspace_p3.x" type="462c0819:PsiDirectoryNode" />
               <item name="模块" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="workspace_p3.x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workspace_p3.x" type="462c0819:PsiDirectoryNode" />
-              <item name="模块" type="462c0819:PsiDirectoryNode" />
-              <item name="其他模块" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="workspace_p3.x" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workspace_p3.x" type="462c0819:PsiDirectoryNode" />
-              <item name="模块" type="462c0819:PsiDirectoryNode" />
-              <item name="数据处理" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,18 +241,18 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace_p3.x\day7\简单的socket_server" />
+      <recent name="F:\workspace_p3.x\day7\收发文件版socket" />
+      <recent name="F:\workspace_p3.x\day7\执行命令版socket" />
+      <recent name="F:\workspace_p3.x\模块\类的使用" />
+      <recent name="F:\workspace_p3.x\模块" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\workspace_p3.x\day7\简单socket" />
       <recent name="F:\" />
       <recent name="F:\workspace_p3.x" />
       <recent name="F:\workspace_p3.x\day5" />
-      <recent name="F:\workspace_p3.x\模块\数据处理" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\workspace_p3.x\day7\收发文件版socket" />
-      <recent name="F:\workspace_p3.x\day7\执行命令版socket" />
-      <recent name="F:\workspace_p3.x\模块\类的使用" />
-      <recent name="F:\workspace_p3.x\模块" />
       <recent name="F:\workspace_p3.x\模块\数据处理" />
     </key>
   </component>
@@ -333,8 +268,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.socket客户端 (1)">
-    <configuration name="class的成员" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.socket客户端">
+    <configuration name="class的反射" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -347,7 +282,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="workspace_p3.x" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day6/class的成员.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day6/class的反射.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -505,39 +440,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="class的反射" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="hashlib模块" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/模块/数据处理" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="workspace_p3.x" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day6/class的反射.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="socket服务端 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7/执行命令版socket" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="workspace_p3.x" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/执行命令版socket/socket服务端.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/模块/数据处理/hashlib模块.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -581,39 +497,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="socket服务端 (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="socket客户端" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7/收发文件版socket" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7/简单的socket_server" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="workspace_p3.x" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/收发文件版socket/socket服务端.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="socket服务端" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="workspace_p3.x" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\workspace_p3.x\day7\简单socket\socket服务端.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/简单的socket_server/socket客户端.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -671,6 +568,63 @@
       <module name="workspace_p3.x" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/socket客户端.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="socket服务端_md5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7/收发文件版socket" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="workspace_p3.x" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/收发文件版socket/socket服务端_md5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="socket_md5客户端" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7/收发文件版socket" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="workspace_p3.x" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/收发文件版socket/socket_md5客户端.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="socket_server服务端" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7/简单的socket_server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="workspace_p3.x" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/简单的socket_server/socket_server服务端.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -823,19 +777,19 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.socket服务端" />
-      <item index="1" class="java.lang.String" itemvalue="Python.socket服务端 (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.socket服务端 (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.socket客户端" />
-      <item index="4" class="java.lang.String" itemvalue="Python.socket客户端 (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Python.socket服务端_md5" />
+      <item index="1" class="java.lang.String" itemvalue="Python.socket_md5客户端" />
+      <item index="2" class="java.lang.String" itemvalue="Python.hashlib模块" />
+      <item index="3" class="java.lang.String" itemvalue="Python.socket_server服务端" />
+      <item index="4" class="java.lang.String" itemvalue="Python.socket客户端" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.socket客户端 (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.socket服务端 (2)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.socket客户端" />
-        <item index="3" class="java.lang.String" itemvalue="Python.socket服务端 (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.socket服务端" />
+        <item index="0" class="java.lang.String" itemvalue="Python.socket客户端" />
+        <item index="1" class="java.lang.String" itemvalue="Python.socket_server服务端" />
+        <item index="2" class="java.lang.String" itemvalue="Python.socket_md5客户端" />
+        <item index="3" class="java.lang.String" itemvalue="Python.socket服务端_md5" />
+        <item index="4" class="java.lang.String" itemvalue="Python.hashlib模块" />
       </list>
     </recent_temporary>
   </component>
@@ -910,13 +864,13 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="446" y="101" width="1439" height="906" extended-state="0" />
+    <frame x="372" y="94" width="1439" height="908" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2593985" sideWeight="0.5024561" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25595984" sideWeight="0.49754387" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25406757" sideWeight="0.49754387" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21011947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -957,41 +911,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/模块/数据存储/configparser模块.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day5/configparser模块.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day5/xml处理.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day5/hashlib模块.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day5/随机模块.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/模块/导入模块的本质">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1136,13 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/模块/数据处理/hashlib模块.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/模块/数据处理/random模块.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -1227,7 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1235,7 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1243,7 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="1" column="45" lean-forward="false" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,7 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,9 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1277,7 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="4" column="46" lean-forward="false" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,18 +1192,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day7/收发文件版socket/socket服务端.py">
+    <entry file="file://$PROJECT_DIR$/模块/数据处理/hashlib模块.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="38" />
+        <state relative-caret-position="180">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day7/收发文件版socket/socket客户端.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="175">
+          <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day7/收发文件版socket/socket_md5客户端.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files (x86)/python3.6/Lib/socketserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="463" column="11" lean-forward="true" selection-start-line="463" selection-start-column="11" selection-end-line="463" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day7/简单的socket_server/socket客户端.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day7/收发文件版socket/socket服务端_md5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day7/收发文件版socket/socket服务端.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day7/简单的socket_server/socket_server服务端.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
