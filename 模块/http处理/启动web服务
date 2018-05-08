@@ -1,0 +1,7 @@
+1 简单的使用python模块启动一个web服务器
+python -m SimpleHTTPServer (py2)
+python -m http.server (py3)
+2 转化数据格式成json格式
+cat filejson.txt |python -m json.tool
+3 查看具体模块的使用方法
+python -m pydoc <name>

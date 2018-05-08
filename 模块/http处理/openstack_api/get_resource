@@ -1,0 +1,4 @@
+#!/bin/bash
+OS_TOKEN=gAAAAABa7-G0fxj4WVSCyss8VTUfR9T33kxU2HlrYYLsCGxO3msxSdjTCGErMF7JKYmww4VbcB7nayZi4a80JvL8OqEQhe85Dr7ZWFMzMv2UQZkGf2v9ZuLrOTJVBNitzIc79GwKnOgh_JbCzta3JTjiJy0jPbIa3GxUeydDZti6CDFTG_8rjAk
+OS_COMPUTE_API=http://172.30.14.8:8774/v2
+curl -s -H "X-Auth-Token: $OS_TOKEN" $OS_COMPUTE_API/flavors |python -m json.tool

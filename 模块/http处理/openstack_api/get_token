@@ -1,0 +1,8 @@
+#!/bin/sh
+OS_PROJECT_DOMAIN_NAME=xiandian
+OS_USER_DOMAIN_NAME=xiandian
+OS_PROJECT_NAME=admin
+OS_USERNAME=admin
+OS_PASSWORD=z9wQNJRVHqpX5HfWKSBL
+OS_AUTH_URL=http://172.30.14.8:5000/v3/
+curl -v -s -D oepnstack_cookie.txt -X POST $OS_AUTH_URL/auth/tokens?nocatalog   -H "Content-Type: application/json"   -d '{ "auth": { "identity": { "methods": ["password"],"password": {"user": {"domain": {"name": "'"$OS_USER_DOMAIN_NAME"'"},"name": "'"$OS_USERNAME"'", "password": "'"$OS_PASSWORD"'"} } }, "scope": { "project": { "domain": { "name": "'"$OS_PROJECT_DOMAIN_NAME"'" }, "name":  "'"$OS_PROJECT_NAME"'" } } }}' |python -m json.tool
