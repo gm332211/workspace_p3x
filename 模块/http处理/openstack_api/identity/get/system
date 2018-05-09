@@ -1,0 +1,5 @@
+openstack(新版本)
+
+curl -v -s -X POST -H "Content-Type: application/json"  -d @pass.json http://172.30.14.8:35357/v3/auth/tokens |python -m json.tool
+
+curl -v -s -X GET http://172.30.14.8:5000/v3/auth/system -H "X-Auth-Token: gAAAAABa8qQqhRfFkX4b6A5hThkpAkdzP0ZI7PrvdFH7xr-W-gUJyBvZl5r9BG9xUSyX3-IfhH9Wi4EjJfO-8mLOHgB-rgq588QawrdJGqhlRLTOhdHeLpmSsKLzDPgRg0acXkNsGCpLJVvWPA0mDbPCJk4zcM89pzClSokrs2EXqucyLIqmSr8" -H "Content-Type: application/json"|python -m json.tool

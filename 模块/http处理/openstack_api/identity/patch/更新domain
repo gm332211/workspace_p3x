@@ -1,0 +1,43 @@
+{
+    "domain": {
+        "description": "Owns users and projects on Identity API v2."
+    }
+}
+
+{"domain": {"description": "Owns users and projects on Identity API v2."}}
+
+curl -v -s -X PATCH http://172.30.14.8:5000/v3/domains/e7ba1d086f6943618e7f33cefea48404 -H "X-Auth-Token: gAAAAABa8rTKSrxZ7eg6EMttQvqoT17f0zTGrKoX_Wbm256FzVeVtqWCY6pul_-MQgexIi_-eHDVXGcspz6bQS5ohid_2y67X1_J9HMNSJ_wxXOtb_qtbtxiyJU3j1om2776Q0MzaRpVhQjqWX-KwlkqTv0SbNeB31j53prviaDFVppPN4MsWQ4" -H "Content-Type: application/json" -d '{"domain": {"description": "Owns users and projects on Identity API v2."}}'|python -m json.tool
+* About to connect() to 172.30.14.8 port 5000 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 5000 (#0)
+> PATCH /v3/domains/e7ba1d086f6943618e7f33cefea48404 HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:5000
+> Accept: */*
+> X-Auth-Token: gAAAAABa8rTKSrxZ7eg6EMttQvqoT17f0zTGrKoX_Wbm256FzVeVtqWCY6pul_-MQgexIi_-eHDVXGcspz6bQS5ohid_2y67X1_J9HMNSJ_wxXOtb_qtbtxiyJU3j1om2776Q0MzaRpVhQjqWX-KwlkqTv0SbNeB31j53prviaDFVppPN4MsWQ4
+> Content-Type: application/json
+> Content-Length: 74
+>
+} [data not shown]
+* upload completely sent off: 74 out of 74 bytes
+< HTTP/1.1 200 OK
+< Date: Wed, 09 May 2018 09:21:09 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-a6e00f27-724b-45cf-9ec2-fd8e2f507f70
+< Content-Length: 239
+< Content-Type: application/json
+<
+{ [data not shown]
+* Connection #0 to host 172.30.14.8 left intact
+{
+    "domain": {
+        "description": "Owns users and projects on Identity API v2.",
+        "enabled": true,
+        "id": "e7ba1d086f6943618e7f33cefea48404",
+        "links": {
+            "self": "http://172.30.14.8:5000/v3/domains/e7ba1d086f6943618e7f33cefea48404"
+        },
+        "name": "test"
+    }
+}

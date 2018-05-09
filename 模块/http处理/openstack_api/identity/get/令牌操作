@@ -1,0 +1,218 @@
+令牌验证令牌[X-Auth-Token 有效令牌,X-Subject-Token 需要操作的令牌]
+curl -v -s  -X GET http://172.30.14.8:35357/v3/auth/tokens  -H "Accept: application/json" -H "X-Subject-Token:gAAAAABa8pQ9_CvfEVGew1Mi29fyloPbKIRfoGDLtMer6Lgr4OIqnMgEwjcXvVxymITZM0CvwCQMAWSBqFUnjSiK9BLLq8OyNb6OsAxZGwGzFh4ougCGmZXTwLVXYB4F47J6r8dTap7YX_Ap5M8E4j-kB3sI36IxhiNcJkBQyP-oSUwa0SXt6b8" -H "X-Auth-Token: gAAAAABa8pN3mJSoEmzaMLo9m7ORfepAlU3kxIvSyoYE06IekLDnWwEvulX6VG9VW75fEkqCSVs9oOvFY5Sgay-pA6dQ_kDR0RreiqPI6QEbuJiZbWIpULY97jAPK5cqM7Ox0g1SjdYZwlmcYgOPF_lHSsTTMmLXjSqXMqRSU7J2Dmz8Urq4q7k" |python -m json.tool
+
+* About to connect() to 172.30.14.8 port 35357 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 35357 (#0)
+> GET /v3/auth/tokens HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:35357
+> Accept: application/json
+> X-Subject-Token:gAAAAABa8pQ9_CvfEVGew1Mi29fyloPbKIRfoGDLtMer6Lgr4OIqnMgEwjcXvVxymITZM0CvwCQMAWSBqFUnjSiK9BLLq8OyNb6OsAxZGwGzFh4ougCGmZXTwLVXYB4F47J6r8dTap7YX_Ap5M8E4j-kB3sI36IxhiNcJkBQyP-oSUwa0SXt6b8
+> X-Auth-Token: gAAAAABa8pN3mJSoEmzaMLo9m7ORfepAlU3kxIvSyoYE06IekLDnWwEvulX6VG9VW75fEkqCSVs9oOvFY5Sgay-pA6dQ_kDR0RreiqPI6QEbuJiZbWIpULY97jAPK5cqM7Ox0g1SjdYZwlmcYgOPF_lHSsTTMmLXjSqXMqRSU7J2Dmz8Urq4q7k
+>
+< HTTP/1.1 200 OK
+< Date: Wed, 09 May 2018 06:25:46 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< X-Subject-Token: gAAAAABa8pQ9_CvfEVGew1Mi29fyloPbKIRfoGDLtMer6Lgr4OIqnMgEwjcXvVxymITZM0CvwCQMAWSBqFUnjSiK9BLLq8OyNb6OsAxZGwGzFh4ougCGmZXTwLVXYB4F47J6r8dTap7YX_Ap5M8E4j-kB3sI36IxhiNcJkBQyP-oSUwa0SXt6b8
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-078d9457-f05c-4e51-96f2-c7b4103abb9c
+< Content-Length: 2844
+< Content-Type: application/json
+<
+{ [data not shown]
+* Connection #0 to host 172.30.14.8 left intact
+{
+    "token": {
+        "audit_ids": [
+            "FziY6KljR-6LFH5ru-AUqQ"
+        ],
+        "catalog": [
+            {
+                "endpoints": [
+                    {
+                        "id": "3eadd1d4f6e14aada5d4ac577edcc7d2",
+                        "interface": "admin",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:8774/v2.1/a7e1dafc7ea8483b87104745b2efa3a1"
+                    },
+                    {
+                        "id": "8e2dc857552d448c9e536431bc0b8755",
+                        "interface": "internal",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:8774/v2.1/a7e1dafc7ea8483b87104745b2efa3a1"
+                    },
+                    {
+                        "id": "d70a7cccb03f408cb8f28a1b16f9b774",
+                        "interface": "public",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:8774/v2.1/a7e1dafc7ea8483b87104745b2efa3a1"
+                    }
+                ],
+                "id": "0caaeb8213b84b0f9b79a1f28df95233",
+                "name": "wuxi-2-xiandian-nova",
+                "type": "compute"
+            },
+            {
+                "endpoints": [
+                    {
+                        "id": "33f6040095ab47eb8fd6ea0fda6786af",
+                        "interface": "public",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9292"
+                    },
+                    {
+                        "id": "affe6e905b094befb4059fbc7d5629f7",
+                        "interface": "internal",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9292"
+                    },
+                    {
+                        "id": "e67b66a6cc7f4aa895c5595fed8e5178",
+                        "interface": "admin",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9292"
+                    }
+                ],
+                "id": "303775cc5de74174a9a5944101e55730",
+                "name": "wuxi-2-xiandian-glance",
+                "type": "image"
+            },
+            {
+                "endpoints": [
+                    {
+                        "id": "46ebabc5336c447faaf022a50db0adf8",
+                        "interface": "admin",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9696"
+                    },
+                    {
+                        "id": "a94d9048c2e443f3b60c5de93b736d54",
+                        "interface": "internal",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9696"
+                    },
+                    {
+                        "id": "dab1903a1fd24738968de597a294103b",
+                        "interface": "public",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9696"
+                    }
+                ],
+                "id": "43cef833e14249caaf37e86e0225f82a",
+                "name": "wuxi-2-xiandian-neutron",
+                "type": "network"
+            },
+            {
+                "endpoints": [
+                    {
+                        "id": "130c6e0ac9bf42c8bce744aaa5674ad8",
+                        "interface": "admin",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:35357/v3"
+                    },
+                    {
+                        "id": "3d6fad282f58419eb9e93c132296a7e6",
+                        "interface": "internal",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:5000/v3"
+                    },
+                    {
+                        "id": "40e45cf10dc64baba46d955507800835",
+                        "interface": "public",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:5000/v3"
+                    }
+                ],
+                "id": "d6fa985047414949b02bf9be182bf71e",
+                "name": "wuxi-2-xiandian-keystone",
+                "type": "identity"
+            }
+        ],
+        "expires_at": "2018-05-09T07:25:01.751395Z",
+        "issued_at": "2018-05-09T06:25:01.000000Z",
+        "methods": [
+            "password"
+        ],
+        "project": {
+            "domain": {
+                "id": "66481ad044e646818008308dbfff8f5a",
+                "name": "xiandian"
+            },
+            "id": "a7e1dafc7ea8483b87104745b2efa3a1",
+            "name": "admin"
+        },
+        "roles": [
+            {
+                "id": "115734e572fb440abfe86e789b17b3e9",
+                "name": "admin"
+            }
+        ],
+        "user": {
+            "domain": {
+                "id": "66481ad044e646818008308dbfff8f5a",
+                "name": "xiandian"
+            },
+            "id": "1011bcba225a4995926fde5786cef600",
+            "name": "admin"
+        }
+    }
+}
+
+仅仅头部验证
+curl -v -s  -X HEAD http://172.30.14.8:35357/v3/auth/tokens  -H "Accept: application/json" -H "X-Subject-Token:gAAAAABa8pQ9_CvfEVGew1Mi29fyloPbKIRfoGDLtMer6Lgr4OIqnMgEwjcXvVxymITZM0CvwCQMAWSBqFUnjSiK9BLLq8OyNb6OsAxZGwGzFh4ougCGmZXTwLVXYB4F47J6r8dTap7YX_Ap5M8E4j-kB3sI36IxhiNcJkBQyP-oSUwa0SXt6b8" -H "X-Auth-Token: gAAAAABa8pN3mJSoEmzaMLo9m7ORfepAlU3kxIvSyoYE06IekLDnWwEvulX6VG9VW75fEkqCSVs9oOvFY5Sgay-pA6dQ_kDR0RreiqPI6QEbuJiZbWIpULY97jAPK5cqM7Ox0g1SjdYZwlmcYgOPF_lHSsTTMmLXjSqXMqRSU7J2Dmz8Urq4q7k"
+* About to connect() to 172.30.14.8 port 35357 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 35357 (#0)
+> HEAD /v3/auth/tokens HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:35357
+> Accept: application/json
+> X-Subject-Token:gAAAAABa8pQ9_CvfEVGew1Mi29fyloPbKIRfoGDLtMer6Lgr4OIqnMgEwjcXvVxymITZM0CvwCQMAWSBqFUnjSiK9BLLq8OyNb6OsAxZGwGzFh4ougCGmZXTwLVXYB4F47J6r8dTap7YX_Ap5M8E4j-kB3sI36IxhiNcJkBQyP-oSUwa0SXt6b8
+> X-Auth-Token: gAAAAABa8pN3mJSoEmzaMLo9m7ORfepAlU3kxIvSyoYE06IekLDnWwEvulX6VG9VW75fEkqCSVs9oOvFY5Sgay-pA6dQ_kDR0RreiqPI6QEbuJiZbWIpULY97jAPK5cqM7Ox0g1SjdYZwlmcYgOPF_lHSsTTMmLXjSqXMqRSU7J2Dmz8Urq4q7k
+>
+< HTTP/1.1 200 OK
+< Date: Wed, 09 May 2018 06:27:47 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< X-Subject-Token: gAAAAABa8pQ9_CvfEVGew1Mi29fyloPbKIRfoGDLtMer6Lgr4OIqnMgEwjcXvVxymITZM0CvwCQMAWSBqFUnjSiK9BLLq8OyNb6OsAxZGwGzFh4ougCGmZXTwLVXYB4F47J6r8dTap7YX_Ap5M8E4j-kB3sI36IxhiNcJkBQyP-oSUwa0SXt6b8
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-091b07d1-cf55-446b-bbc4-34bd07348652
+< Content-Length: 2844
+< Content-Type: application/json
+<
+* transfer closed with 2844 bytes remaining to read
+* Closing connection 0
+
+
+删除有效令牌
+curl -v -s  -X DELETE http://172.30.14.8:35357/v3/auth/tokens  -H "Accept: application/json" -H "X-Subject-Token:gAAAAABa8pQ9_CvfEVGew1Mi29fyloPbKIRfoGDLtMer6Lgr4OIqnMgEwjcXvVxymITZM0CvwCQMAWSBqFUnjSiK9BLLq8OyNb6OsAxZGwGzFh4ougCGmZXTwLVXYB4F47J6r8dTap7YX_Ap5M8E4j-kB3sI36IxhiNcJkBQyP-oSUwa0SXt6b8" -H "X-Auth-Token: gAAAAABa8pN3mJSoEmzaMLo9m7ORfepAlU3kxIvSyoYE06IekLDnWwEvulX6VG9VW75fEkqCSVs9oOvFY5Sgay-pA6dQ_kDR0RreiqPI6QEbuJiZbWIpULY97jAPK5cqM7Ox0g1SjdYZwlmcYgOPF_lHSsTTMmLXjSqXMqRSU7J2Dmz8Urq4q7k"
+* About to connect() to 172.30.14.8 port 35357 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 35357 (#0)
+> DELETE /v3/auth/tokens HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:35357
+> Accept: application/json
+> X-Subject-Token:gAAAAABa8pQ9_CvfEVGew1Mi29fyloPbKIRfoGDLtMer6Lgr4OIqnMgEwjcXvVxymITZM0CvwCQMAWSBqFUnjSiK9BLLq8OyNb6OsAxZGwGzFh4ougCGmZXTwLVXYB4F47J6r8dTap7YX_Ap5M8E4j-kB3sI36IxhiNcJkBQyP-oSUwa0SXt6b8
+> X-Auth-Token: gAAAAABa8pN3mJSoEmzaMLo9m7ORfepAlU3kxIvSyoYE06IekLDnWwEvulX6VG9VW75fEkqCSVs9oOvFY5Sgay-pA6dQ_kDR0RreiqPI6QEbuJiZbWIpULY97jAPK5cqM7Ox0g1SjdYZwlmcYgOPF_lHSsTTMmLXjSqXMqRSU7J2Dmz8Urq4q7k
+>
+< HTTP/1.1 204 No Content
+< Date: Wed, 09 May 2018 06:28:57 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-e6805de5-f097-4e3b-84c7-54646cf24790
+< Content-Length: 0
+<
+* Connection #0 to host 172.30.14.8 left intact

@@ -1,0 +1,39 @@
+* About to connect() to 172.30.14.8 port 5000 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 5000 (#0)
+> POST /v3/auth/tokens HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:5000
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 269
+>
+} [data not shown]
+* upload completely sent off: 269 out of 269 bytes
+< HTTP/1.1 201 Created
+< Date: Wed, 09 May 2018 05:13:20 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< X-Subject-Token: gAAAAABa8oNw5PiFOISRMD9QUgncBN3J0bWGY_HQmjc2mWfQinrxTzyHgjz0qHjlClmjoATQX6ef0nmFVmzgK7zuA3famn93CqgZ2m1JhqemA1n115p4tB7oDBsSEBAJrT3gZw-BpJjH50mlOPRVWbJ_hi26CcRyut8LqxwoPG2aaaZT0Ggi5Q0
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-00c766e7-a0f4-48b7-aae1-35fb59247f73
+< Content-Length: 344
+< Content-Type: application/json
+<
+
+POST 状态转化
+User-Agent
+Host 主机
+Accept
+Content-Type 表现层
+Content-Length
+X-Subject-Token 服务器认证成功令牌值
+Vary
+
+状态码
+400 - Bad Request	请求中的某些内容无效。
+401 - Unauthorized	用户在提出请求之前必须进行身份验证。
+403 - Forbidden	不允许当前用户执行此操作。
+404 - Not Found	找不到请求的资源。
+405 - Method Not Allowed	方法对此端点无效。
+413 - Request Entity Too Large	该请求比服务器愿意或能够处理的要大。
+503 - Service Unavailable	服务不可用。这主要是由于服务配置错误导致服务无法成功启动引起的。

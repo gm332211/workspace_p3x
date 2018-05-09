@@ -1,3 +1,22 @@
+无限制区域令牌认证
+{
+    "auth": {
+        "identity": {
+            "methods": [
+                "password"
+            ],
+            "password": {
+                "user": {
+                    "name": "admin",
+                    "domain": {
+                        "name": "Default"
+                    },
+                    "password": "devstacker"
+                }
+            }
+        }
+    }
+}
 curl -v -s -H "Content-Type: application/json" -X POST -d '{"auth": {"identity": {"methods": ["password"],"password": {"user": {"name": "admin","domain": {"name": "xiandian"},"password": "z9wQNJRVHqpX5HfWKSBL"}}}}}' http://172.30.14.8:5000/v3/auth/tokens |python -m json.tool
 * About to connect() to 172.30.14.8 port 5000 (#0)
 *   Trying 172.30.14.8...
@@ -54,6 +73,3 @@ user 用户对象
         name 域名称
     id 用户id
     name 用户名称
-
-
-

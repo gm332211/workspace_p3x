@@ -1,0 +1,230 @@
+有限制区域项目令牌认证(作用域认证)
+{
+    "auth": {
+        "identity": {
+            "methods": [
+                "password"
+            ],
+            "password": {
+                "user": {
+                    "id": "ee4dfb6e5540447cb3741905149d9b6e",
+                    "password": "devstacker"
+                }
+            }
+        },
+        "scope": {
+            "project": {
+                "id": "a6944d763bf64ee6a275f1263fae0352"
+            }
+        }
+    }
+}
+user 指定user id和密码
+project 指定是对应用户项目id如果是name的话还要指定domain域名称
+
+curl -v -s -H "Content-Type: application/json" -X POST -d '{"auth": {"identity": {"methods": ["password"],"password": {"user": {"id": "1011bcba225a4995926fde5786cef600","password": "z9wQNJRVHqpX5HfWKSBL"}}},"scope": {"project": {"id": "a47cdca620d14734aeb5ad010347945c"}}}}' http://172.30.14.8:5000/v3/auth/tokens |python -m json.tool
+* About to connect() to 172.30.14.8 port 5000 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 5000 (#0)
+> POST /v3/auth/tokens HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:5000
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 214
+>
+} [data not shown]
+* upload completely sent off: 214 out of 214 bytes
+< HTTP/1.1 201 Created
+< Date: Tue, 08 May 2018 03:11:12 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< X-Subject-Token: gAAAAABa8RVQADr6dKpR0d0cs7MpbagpijaOJTvFZr0n-wuZ2gRB-Rb_rbNotKN46bI-uJXISb_C5NXF2q2WbAR8Fvd9VQ4qv6VmKcPj7c-D7O1R2DRHPEZ2s_PfmgDkiMb3WbGZ2g3P8jajvAd639_LL_tGvAkN0YQa6E-7yB_wbjQBHrO9s7Y
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-d79ef68a-9823-4da0-8b0f-824f9df2499f
+< Content-Length: 2844
+< Content-Type: application/json
+<
+{ [data not shown]
+* Connection #0 to host 172.30.14.8 left intact
+{
+    "token": {
+        "audit_ids": [
+            "CHbsQ5UCRXK2wAg0bNyu1Q"
+        ],
+        "catalog": [
+            {
+                "endpoints": [
+                    {
+                        "id": "3eadd1d4f6e14aada5d4ac577edcc7d2",
+                        "interface": "admin",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:8774/v2.1/a7e1dafc7ea8483b87104745b2efa3a1"
+                    },
+                    {
+                        "id": "8e2dc857552d448c9e536431bc0b8755",
+                        "interface": "internal",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:8774/v2.1/a7e1dafc7ea8483b87104745b2efa3a1"
+                    },
+                    {
+                        "id": "d70a7cccb03f408cb8f28a1b16f9b774",
+                        "interface": "public",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:8774/v2.1/a7e1dafc7ea8483b87104745b2efa3a1"
+                    }
+                ],
+                "id": "0caaeb8213b84b0f9b79a1f28df95233",
+                "name": "wuxi-2-xiandian-nova",
+                "type": "compute"
+            },
+            {
+                "endpoints": [
+                    {
+                        "id": "33f6040095ab47eb8fd6ea0fda6786af",
+                        "interface": "public",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9292"
+                    },
+                    {
+                        "id": "affe6e905b094befb4059fbc7d5629f7",
+                        "interface": "internal",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9292"
+                    },
+                    {
+                        "id": "e67b66a6cc7f4aa895c5595fed8e5178",
+                        "interface": "admin",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9292"
+                    }
+                ],
+                "id": "303775cc5de74174a9a5944101e55730",
+                "name": "wuxi-2-xiandian-glance",
+                "type": "image"
+            },
+            {
+                "endpoints": [
+                    {
+                        "id": "46ebabc5336c447faaf022a50db0adf8",
+                        "interface": "admin",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9696"
+                    },
+                    {
+                        "id": "a94d9048c2e443f3b60c5de93b736d54",
+                        "interface": "internal",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9696"
+                    },
+                    {
+                        "id": "dab1903a1fd24738968de597a294103b",
+                        "interface": "public",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:9696"
+                    }
+                ],
+                "id": "43cef833e14249caaf37e86e0225f82a",
+                "name": "wuxi-2-xiandian-neutron",
+                "type": "network"
+            },
+            {
+                "endpoints": [
+                    {
+                        "id": "130c6e0ac9bf42c8bce744aaa5674ad8",
+                        "interface": "admin",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:35357/v3"
+                    },
+                    {
+                        "id": "3d6fad282f58419eb9e93c132296a7e6",
+                        "interface": "internal",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:5000/v3"
+                    },
+                    {
+                        "id": "40e45cf10dc64baba46d955507800835",
+                        "interface": "public",
+                        "region": "wuxi-2",
+                        "region_id": "wuxi-2",
+                        "url": "http://172.30.14.8:5000/v3"
+                    }
+                ],
+                "id": "d6fa985047414949b02bf9be182bf71e",
+                "name": "wuxi-2-xiandian-keystone",
+                "type": "identity"
+            }
+        ],
+        "expires_at": "2018-05-08T04:11:12.866527Z",
+        "issued_at": "2018-05-08T03:11:12.000000Z",
+        "methods": [
+            "password"
+        ],
+        "project": {
+            "domain": {
+                "id": "66481ad044e646818008308dbfff8f5a",
+                "name": "xiandian"
+            },
+            "id": "a7e1dafc7ea8483b87104745b2efa3a1",
+            "name": "admin"
+        },
+        "roles": [
+            {
+                "id": "115734e572fb440abfe86e789b17b3e9",
+                "name": "admin"
+            }
+        ],
+        "user": {
+            "domain": {
+                "id": "66481ad044e646818008308dbfff8f5a",
+                "name": "xiandian"
+            },
+            "id": "1011bcba225a4995926fde5786cef600",
+            "name": "admin"
+        }
+    }
+}
+X-Subject-Token 身份认证令牌
+token token对象
+    audit_ids 审核id随机生成
+    catalog catalog对象
+        endpoint endpoint对象
+                id 内部api id
+                interface api接口类型 admin管理员可用,public公网公共使用,internal最终用户内网使用(内部api类型)
+                region 服务端点区域
+                region_id 区域id
+                url endpoint api资源地址
+        id api id
+        name api名称
+        type api对象类型
+
+    methods 认证方法
+    issued_at 创建令牌的时间
+    expires_at 令牌过期时间
+    project 用户所在项目对象
+        domain 项目所在域
+            id 域id
+            name 域名称
+        id 对象id
+        name 对象名称
+    roles 角色对象
+        id 角色id
+        name 角色名称
+    user 用户对象
+        domain 用户所在域
+            id 域id
+            name 域名称
+        id 用户id
+        name 用户名称
+    system system对象
+

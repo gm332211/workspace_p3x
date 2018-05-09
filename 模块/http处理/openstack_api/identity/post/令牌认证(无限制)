@@ -1,0 +1,78 @@
+{
+    "auth": {
+        "identity": {
+            "methods": [
+                "token"
+            ],
+            "token": {
+                "id": "'$OS_TOKEN'"
+            }
+        },
+        "scope": "unscoped"
+    }
+}
+
+{"auth": {"identity": {"methods": ["token"],"token": {"id": "'$OS_TOKEN'"}},"scope": "unscoped"}}
+
+[request]
+OS_TOKEN=gAAAAABa8oNXKWzArjYo3s1o6pHCmnPorMh_QitG-1eL_sm-mS0zGLYR0YIKrZezFea9joziY80E1bmFyJEC0SCsdL1R1R6SPPsnbOt_HoB3FtEfcPe7oRjBXzzZX5eLqu_aJnTUlhyQBp_J_ST3tnyf_LiDfhIKkf1vT9nJ0jvllC8yRH8e4zM
+curl -v -s -H "Content-Type: application/json" -X POST -d '{"auth": {"identity": {"methods": ["token"],"token": {"id": "'$OS_TOKEN'"}},"scope": "unscoped"}}' http://172.30.14.8:5000/v3/auth/tokens |python -m json.tool
+
+[respone]
+* About to connect() to 172.30.14.8 port 5000 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 5000 (#0)
+> POST /v3/auth/tokens HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:5000
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 269
+>
+} [data not shown]
+* upload completely sent off: 269 out of 269 bytes
+< HTTP/1.1 201 Created
+< Date: Wed, 09 May 2018 05:13:20 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< X-Subject-Token: gAAAAABa8oNw5PiFOISRMD9QUgncBN3J0bWGY_HQmjc2mWfQinrxTzyHgjz0qHjlClmjoATQX6ef0nmFVmzgK7zuA3famn93CqgZ2m1JhqemA1n115p4tB7oDBsSEBAJrT3gZw-BpJjH50mlOPRVWbJ_hi26CcRyut8LqxwoPG2aaaZT0Ggi5Q0
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-00c766e7-a0f4-48b7-aae1-35fb59247f73
+< Content-Length: 344
+< Content-Type: application/json
+<
+{ [data not shown]
+* Connection #0 to host 172.30.14.8 left intact
+{
+    "token": {
+        "audit_ids": [
+            "ZEk1gaixRj-d8S_s0YaZBA",
+            "0RBXSPz5RmOpJ4NhbcNuMw"
+        ],
+        "expires_at": "2018-05-09T06:12:55.315593Z",
+        "issued_at": "2018-05-09T05:13:20.000000Z",
+        "methods": [
+            "token",
+            "password"
+        ],
+        "user": {
+            "domain": {
+                "id": "66481ad044e646818008308dbfff8f5a",
+                "name": "xiandian"
+            },
+            "id": "1011bcba225a4995926fde5786cef600",
+            "name": "admin"
+        }
+    }
+}
+X-Subject-Token 头部令牌值
+token token对象
+    audit_ids 审核id随机生成
+    expires_at 令牌失效时间
+    issued_at 令牌生成时间
+    methods 认证方式[token,password]
+    user 用户对象
+        domain 用户所在域对象
+            id 域id
+            name 域名称
+        id 用户id
+        name 用户名称

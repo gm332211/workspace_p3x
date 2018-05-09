@@ -1,0 +1,54 @@
+ curl -v -s -X POST -H "Content-Type: application/json"  -d @project.json http://172.30.14.8:35357/v3/auth/tokens |python -m json.tool
+
+
+
+{
+    "domain": {
+        "description": "Domain description",
+        "enabled": true,
+        "name": "myDomain"
+    }
+}
+
+
+{"domain": {"description": "Domain description","enabled": true,"name": "myDomain"}}
+
+
+ curl -v -s -X POST http://172.30.14.8:35357/v3/domains -H "Accept: application/json" -H "Content-Type: application/json" -H "X-Auth-Token: gAAAAABa8rcO-OHoIaYCpuN6YHRjM-zOSJxipTYWoOF95r-Hp5goFXEfl8ZmMDRD5wdZA0k-m4yfSXW3bqIn324p0Ko_4Vsc3gLjnRn1bbLvb9FOBA8KNV58EJhYx1fBg1k4p735zSGMz0fLDIPvkM01ATYSF3lcrUivtEYQErdipSWjqMA2-WM" -d '{"domain": {"description": "Domain description","enabled": true,"name": "myDomain"}}' |python -m json.tool
+
+
+ ": "myDomain"}}' |python -m json.tool
+* About to connect() to 172.30.14.8 port 35357 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 35357 (#0)
+> POST /v3/domains HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:35357
+> Accept: application/json
+> Content-Type: application/json
+> X-Auth-Token: gAAAAABa8rcO-OHoIaYCpuN6YHRjM-zOSJxipTYWoOF95r-Hp5goFXEfl8ZmMDRD5wdZA0k-m4yfSXW3bqIn324p0Ko_4Vsc3gLjnRn1bbLvb9FOBA8KNV58EJhYx1fBg1k4p735zSGMz0fLDIPvkM01ATYSF3lcrUivtEYQErdipSWjqMA2-WM
+> Content-Length: 84
+>
+} [data not shown]
+* upload completely sent off: 84 out of 84 bytes
+< HTTP/1.1 201 Created
+< Date: Wed, 09 May 2018 09:04:03 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-c52e189a-3ce5-409a-9b5b-46a36e3f694c
+< Content-Length: 219
+< Content-Type: application/json
+<
+{ [data not shown]
+* Connection #0 to host 172.30.14.8 left intact
+{
+    "domain": {
+        "description": "Domain description",
+        "enabled": true,
+        "id": "51e84857cedb4e72896d8d9570b94a0a",
+        "links": {
+            "self": "http://172.30.14.8:35357/v3/domains/51e84857cedb4e72896d8d9570b94a0a"
+        },
+        "name": "myDomain"
+    }
+}
