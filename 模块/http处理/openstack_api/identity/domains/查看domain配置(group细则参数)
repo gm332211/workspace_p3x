@@ -1,0 +1,85 @@
+ldap url
+curl -X GET -v -s -H "X-Auth-Token:gAAAAABa8-TS4oxn0zbHHh-2NUO7o9csG7XW9o2Bl0pU_0O9i8ywxsnRGHEWbr2WLNK6SfjOl2dc491xbYA4dnjdA1OlHvy7KjcW8jwj2EE2jsS2KF6rD6sq8PCIhinOL94WXGLeQXclRhP7QAprk33ozgjstkFuVj5sIjvujlo2nz0MO1NYg84" http://172.30.14.8:5000/v3/domains/config/ldap/url/default -H "Content-Type:application/json"|python -m json.tool
+* About to connect() to 172.30.14.8 port 5000 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 5000 (#0)
+> GET /v3/domains/config/ldap/url/default HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:5000
+> Accept: */*
+> X-Auth-Token:gAAAAABa8-TS4oxn0zbHHh-2NUO7o9csG7XW9o2Bl0pU_0O9i8ywxsnRGHEWbr2WLNK6SfjOl2dc491xbYA4dnjdA1OlHvy7KjcW8jwj2EE2jsS2KF6rD6sq8PCIhinOL94WXGLeQXclRhP7QAprk33ozgjstkFuVj5sIjvujlo2nz0MO1NYg84
+> Content-Type:application/json
+>
+< HTTP/1.1 200 OK
+< Date: Thu, 10 May 2018 06:21:35 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-48b1bd2d-dd1c-409d-8a48-36dd0ec0d077
+< Content-Length: 39
+< Content-Type: application/json
+<
+{ [data not shown]
+* Connection #0 to host 172.30.14.8 left intact
+{
+    "config": {
+        "url": "ldap://localhost"
+    }
+}
+ldap user_tree_dn
+
+curl -X GET -v -s -H "X-Auth-Token:gAAAAABa8-TS4oxn0zbHHh-2NUO7o9csG7XW9o2Bl0pU_0O9i8ywxsnRGHEWbr2WLNK6SfjOl2dc491xbYA4dnjdA1OlHvy7KjcW8jwj2EE2jsS2KF6rD6sq8PCIhinOL94WXGLeQXclRhP7QAprk33ozgjstkFuVj5sIjvujlo2nz0MO1NYg84" http://172.30.14.8:5000/v3/domains/config/ldap/user_tree_dn/default -H "Content-Type:application/json"|python -m json.tool
+* About to connect() to 172.30.14.8 port 5000 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 5000 (#0)
+> GET /v3/domains/config/ldap/user_tree_dn/default HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:5000
+> Accept: */*
+> X-Auth-Token:gAAAAABa8-TS4oxn0zbHHh-2NUO7o9csG7XW9o2Bl0pU_0O9i8ywxsnRGHEWbr2WLNK6SfjOl2dc491xbYA4dnjdA1OlHvy7KjcW8jwj2EE2jsS2KF6rD6sq8PCIhinOL94WXGLeQXclRhP7QAprk33ozgjstkFuVj5sIjvujlo2nz0MO1NYg84
+> Content-Type:application/json
+>
+< HTTP/1.1 200 OK
+< Date: Thu, 10 May 2018 06:22:31 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-bc135123-45f1-44f1-b16d-a526298449ea
+< Content-Length: 34
+< Content-Type: application/json
+<
+{ [data not shown]
+* Connection #0 to host 172.30.14.8 left intact
+{
+    "config": {
+        "user_tree_dn": null
+    }
+}
+
+
+
+identity driver
+curl -X GET -v -s -H "X-Auth-Token:gAAAAABa8-TS4oxn0zbHHh-2NUO7o9csG7XW9o2Bl0pU_0O9i8ywxsnRGHEWbr2WLNK6SfjOl2dc491xbYA4dnjdA1OlHvy7KjcW8jwj2EE2jsS2KF6rD6sq8PCIhinOL94WXGLeQXclRhP7QAprk33ozgjstkFuVj5sIjvujlo2nz0MO1NYg84" http://172.30.14.8:5000/v3/domains/config/identity/driver/default -H "Content-Type:application/json"|python -m json.tool
+* About to connect() to 172.30.14.8 port 5000 (#0)
+*   Trying 172.30.14.8...
+* Connected to 172.30.14.8 (172.30.14.8) port 5000 (#0)
+> GET /v3/domains/config/identity/driver/default HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.30.14.8:5000
+> Accept: */*
+> X-Auth-Token:gAAAAABa8-TS4oxn0zbHHh-2NUO7o9csG7XW9o2Bl0pU_0O9i8ywxsnRGHEWbr2WLNK6SfjOl2dc491xbYA4dnjdA1OlHvy7KjcW8jwj2EE2jsS2KF6rD6sq8PCIhinOL94WXGLeQXclRhP7QAprk33ozgjstkFuVj5sIjvujlo2nz0MO1NYg84
+> Content-Type:application/json
+>
+< HTTP/1.1 200 OK
+< Date: Thu, 10 May 2018 06:24:47 GMT
+< Server: Apache/2.4.6 (CentOS) mod_wsgi/3.4 Python/2.7.5
+< Vary: X-Auth-Token
+< x-openstack-request-id: req-37fda6f6-44e1-4c9e-ae78-17ba4f92ea2b
+< Content-Length: 29
+< Content-Type: application/json
+<
+{ [data not shown]
+* Connection #0 to host 172.30.14.8 left intact
+{
+    "config": {
+        "driver": "sql"
+    }
+}

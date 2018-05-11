@@ -1,0 +1,20 @@
+获取所有组
+GET /v3/groups
+创建一个组
+POST /v3/groups
+-d {"group": {"description": "Contract developers","domain_id": "default","name": "Contract developers"}}
+获取单个组
+GET /v3/groups/{group_id}
+更新单个组
+PATCH /v3/groups/{group_id}
+-d {"group": {"description": "Contract developers 2016","name": "Contract developers 2016"}}
+删除单个组
+DELETE /v3/groups/{group_id}
+获取单个组中的所有用户
+GET /v3/groups/{group_id}/users
+更新单个组中的单个用户(添加用户到一个组里面)
+PUT /v3/groups/{group_id}/users/{user_id}
+检查一个用户是不是在组里
+HEAD /v3/groups/{group_id}/users/{user_id}
+移除单个组中单个用户
+DELETE /v3/groups/{group_id}/users/{user_id}

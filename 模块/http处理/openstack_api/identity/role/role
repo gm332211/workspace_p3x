@@ -1,0 +1,82 @@
+添加角色
+PUT /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+列出用户的角色信息
+GET /role_assignments?user.id={user_id}
+列出指定项目的角色分配
+GET /role_assignments?scope.project.id={project_id}
+列出特定用户的系统角色分配
+GET /role_assignments?scope.system=all?user.id={user_id}
+列出所有用户和组的系统角色分配
+GET /role_assignments?scope.system=all
+获取所有角色
+GET /v3/roles
+创建角色
+POST /v3/roles
+-d {"role": {"name": "developer"}}
+-d {"role": {"domain_id": "92e782c4988642d783a95f4a87c3fdd7","name": "developer"}}
+获取单个角色
+GET /v3/roles/{role_id}
+更新一个角色
+PATCH /v3/roles/{role_id}
+-d {"role": {"name": "Developer"}}
+删除一个角色
+DELETE /v3/roles/{role_id}
+域-->组
+列出域的组角色分配
+GET /v3/domains/{domain_id}/groups/{group_id}/roles
+分配角色到组
+PUT /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+检查这个组是否分配了这个角色
+HEAD /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+删除组上的一个角色
+DELETE /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+
+域-->用户
+获取用户所属角色
+GET /v3/domains/{domain_id}/users/{user_id}/roles
+更新一个用户到一个角色中
+PUT /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+检查用户是否在角色中
+HEAD /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+Check whether user has role assignment on domain
+删除一个角色分配
+DELETE /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+Unassigns role from user on domain
+
+项目-->组
+获取组中的角色
+GET /v3/projects/{project_id}/groups/{group_id}/roles
+更新一个组中的角色
+PUT /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+Assign role to group on project
+检查一个组中的角色
+HEAD /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+删除组中的一个角色
+DELETE /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+
+项目-->用户
+获取用户的所有角色
+GET /v3/projects/{project_id}/users/{user_id}/roles
+更新一个用户的角色
+PUT /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+检查用户是否是这个角色
+HEAD /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+删除用户一个角色
+DELETE /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+
+prior_role_id 中单个角色id
+获取单个角色的规则
+GET /v3/roles/{prior_role_id}/implies
+创建一个角色判断规则
+PUT /v3/roles/{prior_role_id}/implies/{implies_role_id}
+获取一个角色判断规则
+GET /v3/roles/{prior_role_id}/implies/{implies_role_id}
+验证一个角色判断规则
+HEAD /v3/roles/{prior_role_id}/implies/{implies_role_id}
+删除一个角色判断规则
+DELETE /v3/roles/{prior_role_id}/implies/{implies_role_id}
+列出所有角色分配
+GET /v3/role_assignments
+列出所有规则
+GET /v3/role_inferences
+List all role inference rules

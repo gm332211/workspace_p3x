@@ -1,0 +1,6 @@
+{
+    "url": "http://myldap/my_other_root"
+}
+{"url": "http://myldap/my_other_root"}
+
+curl -X PATCH -v -s -H "X-Auth-Token:gAAAAABa8-TS4oxn0zbHHh-2NUO7o9csG7XW9o2Bl0pU_0O9i8ywxsnRGHEWbr2WLNK6SfjOl2dc491xbYA4dnjdA1OlHvy7KjcW8jwj2EE2jsS2KF6rD6sq8PCIhinOL94WXGLeQXclRhP7QAprk33ozgjstkFuVj5sIjvujlo2nz0MO1NYg84" http://172.30.14.8:5000/v3/domains/a9244e18135f4a8da8619ce5df92dfa3/config/ldap/url -H "Content-Type:application/json" -d '{"url": "http://myldap/my_other_root"}'|python -m json.tool

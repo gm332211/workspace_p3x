@@ -1,0 +1,40 @@
+获取domain默认配置
+GET /v3/domains/config/default
+获取domain默认组配置
+GET /v3/domains/config/{group}/default
+获取domain默认单个配置
+GET /v3/domains/config/{group}/{option}/default
+获取对应domain一个属性配置
+GET /v3/domains/{domain_id}/config/{group}/{option}
+更新对应domain一个配置属性
+PATCH /v3/domains/{domain_id}/config/{group}/{option}
+-d {"url": "http://myldap/my_other_root"}
+删除对应domain一个配置属性
+DELETE /v3/domains/{domain_id}/config/{group}/{option}
+获取对应domain配置组
+GET /v3/domains/{domain_id}/config/{group}
+更新对应domain配置组
+PATCH /v3/domains/{domain_id}/config/{group}
+-d {"config": {"ldap": {"url": "http://myldap/my_new_root","user_tree_dn": "ou=Users,dc=my_new_root,dc=org"}}}
+删除对应domain配置的组
+DELETE /v3/domains/{domain_id}/config/{group}
+创建对应的domain配置
+PUT /v3/domains/{domain_id}/config
+-d {"config": {"identity": {"driver": "ldap"},"ldap": {"url": "ldap://myldap.com:389/","user_tree_dn": "ou=Users,dc=my_new_root,dc=org"}}}
+获取对应的domain配置
+GET /v3/domains/{domain_id}/config
+更新对应的domain配置
+PATCH /v3/domains/{domain_id}/config
+-d {"config": {"ldap": {"url": "http://myldap/my_new_root","user_tree_dn": "ou=Users,dc=my_new_root,dc=org"}}}
+删除对应的domain配置
+DELETE /v3/domains/{domain_id}/config
+
+
+$OS_TOKEN 有效令牌值
+config.json 需要修改或配置的文件
+GET 获取,POST 获取,patch 更新,put 创建,delete 删除
+curl -v -s -X GET http://172.30.14.8:5000/v3 -H "X-Auth-Token:$OS_TOKEN" -H "Content-Type:application/json" -d@config.json |python -m json.tool
+curl -v -s -X POST http://172.30.14.8:5000/v3 -H "X-Auth-Token:$OS_TOKEN" -H "Content-Type:application/json" -d@config.json |python -m json.tool
+curl -v -s -X PATCH http://172.30.14.8:5000/v3 -H "X-Auth-Token:$OS_TOKEN" -H "Content-Type:application/json" -d@config.json |python -m json.tool
+curl -v -s -X PUT http://172.30.14.8:5000/v3 -H "X-Auth-Token:$OS_TOKEN" -H "Content-Type:application/json" -d@config.json |python -m json.tool
+curl -v -s -X DELETE http://172.30.14.8:5000/v3 -H "X-Auth-Token:$OS_TOKEN" -H "Content-Type:application/json" |python -m json.tool

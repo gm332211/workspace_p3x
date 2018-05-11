@@ -1,0 +1,15 @@
+用户权限
+创建一个用户权限
+POST /v3/policies
+-d {"policy": {"blob": "{'foobar_user': 'role:compute-user'}","type": "application/json"}}
+查询所有权限
+GET /v3/policies
+查看一个权限
+GET /v3/policies/{policy_id}
+更新一个权限
+PATCH /v3/policies/{policy_id}
+-d {"policy": {"blob": {"foobar_user": ["role:compute-user"]},"type": "application/json"}}
+删除一个权限
+DELETE /v3/policies/{policy_id}
+
+

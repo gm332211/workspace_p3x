@@ -1,0 +1,12 @@
+获取一个地区
+GET /v3/regions/{region_id}
+更新一个地区
+PATCH /v3/regions/{region_id}
+-d {"region": {"description": "My subregion 3"}}
+删除一个地区
+DELETE /v3/regions/{region_id}
+获取多个地区
+GET /v3/regions
+创建一个地区
+POST /v3/regions
+-d {"region": {"description": "My subregion","id": "RegionOneSubRegion","parent_region_id": "RegionOne"}}

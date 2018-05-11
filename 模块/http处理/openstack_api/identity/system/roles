@@ -1,0 +1,22 @@
+系统角色
+获取单个用户所有角色
+GET /v3/system/users/{user_id}/roles
+添加这个用户角色
+PUT /v3/system/users/{user_id}/roles/{role_id}
+检查这个用户角色
+HEAD /v3/system/users/{user_id}/roles/{role_id}
+获取单个用户单个角色
+GET /v3/system/users/{user_id}/roles/{role_id}
+删除这个用户角色
+DELETE /v3/system/users/{user_id}/roles/{role_id}
+
+获取组中所有角色
+GET /v3/system/groups/{group_id}/roles
+更新组中的一个角色
+PUT /v3/system/groups/{group_id}/roles/{role_id}
+检查组中的一个角色
+HEAD /v3/system/groups/{group_id}/roles/{role_id}
+获取组中单个角色
+GET /v3/system/groups/{group_id}/roles/{role_id}
+删除组中单个角色
+DELETE /v3/system/groups/{group_id}/roles/{role_id}

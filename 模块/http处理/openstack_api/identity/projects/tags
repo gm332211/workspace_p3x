@@ -1,0 +1,28 @@
+获取项目标签
+GET /v3/projects/{project_id}/tags
+获取单个项目标签
+GET /v3/projects/{project_id}/tags/{tag}
+添加一个项目标签到项目
+PUT /v3/projects/{project_id}/tags/{tag}
+修改项目标签列表
+PUT /v3/projects/{project_id}/tags
+-d {"tags": ["foo", "bar"]}
+删除一个项目标签
+DELETE /v3/projects/{project_id}/tags/{tag}
+Delete single tag from project
+删除一个项目标签列表
+DELETE /v3/projects/{project_id}/tags
+
+过滤和搜索
+标签名称
+GET /v3/projects?tags=foo
+多个标签名称
+GET /v3/projects?tags=foo,bar
+任意一个名称
+GET /v3/projects?tags-any=foo,bar
+必须2个都不在去除
+GET /v3/projects?not-tags=foo,bar
+任意一个在去除
+GET /v3/projects?not-tags-any=foo,bar
+结合标签
+GET /v3/projects?tags=foo,bar&tags-any=red,blue

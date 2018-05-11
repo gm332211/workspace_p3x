@@ -1,0 +1,13 @@
+获取项目列表
+GET /v3/projects
+创建一个项目
+POST /v3/projects
+-d {"project": {"description": "My new project","domain_id": "default","enabled": true,"is_domain": false,"name": "myNewProject"}}
+-d {"project": {"description": "My new domain","enabled": true,"is_domain": true,"name": "myNewDomain"}}
+获取一个项目
+GET /v3/projects/{project_id}
+更新一个项目
+PATCH /v3/projects/{project_id}
+-d {"project": {"description": "My updated project","name": "myUpdatedProject"}}
+删除一个项目
+/v3/projects/{project_id}
