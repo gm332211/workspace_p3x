@@ -1,0 +1,37 @@
+#url设置
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    #指定二阶app url导航
+    url(r'^$', views.index),
+
+二阶url
+    url(r'polls/',include('polls.urls'))
+
+url 中参数的接收
+    GET 拼接方法(http://127.0.0.1:8080/add/?a=1&b=2)
+    url(r'^add/',po_views.add,name='add')
+    GET 正则接收方法(http://127.0.0.1:8080/add2/1/2/)
+    url(r'^add2/(\d+)/(\d+)/$',po_views.add2,name='add2')
+
+url中name的使用
+    views中使用
+    reverse('add2',args=(4,5)) #使用name真正url修改这里也会修改
+    模板中使用
+    {% url 'add2' 4 5%}
+
+旧url重定向
+    def old_add2_red(request,a,b):
+        new_url=reverse('add2',args=(a,b))
+        return HttpResponseRedirect(new_url)
+
+#views函数
+def add(request):
+    #使用url GET拼接处理
+    a=request.GET.get('a',0)
+    b=request.GET.get('b',0)
+    c=int(a)+int(b)
+    return HttpResponse('计算结果是%s'%c)
+def add2(request,a,b):
+    #使用url正则处理
+    c=int(a)+int(b)
+    return HttpResponse('计算结果%s'%c)

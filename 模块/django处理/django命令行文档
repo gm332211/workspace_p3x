@@ -1,0 +1,26 @@
+创建一个django项目
+django-admin.py startproject project_name
+创建django项目中的一个app
+django-admin.py startapp app_name
+创建数据库更改文件
+python manage.py makemigraions
+根据py文件创建数据库
+python manage.py migrate
+数据库的导入和导出
+python manage.py dumpdata appname > appname.json
+python manage.py loaddata appname.json
+清空数据库内容
+python manage.py flush
+运行django
+python manage.py runserver(端口运行)python manage.py runserver 8080(ip运行)python manage.py runserver 0.0.0.0:8080
+创建超级管理员用户
+python manage.py createsuperuser
+修改用户密码
+python manage.py changepassword username
+django项目终端
+python manage.py shell
+django数据库终端
+python manage.py dbshell
+
+
+

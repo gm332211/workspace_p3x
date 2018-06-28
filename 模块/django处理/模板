@@ -1,0 +1,16 @@
+views视图中模板的调用
+def home(request):
+    return render(request,'home.html')
+
+在app目录下创建templates模板文件夹
+创建home.html模板文件
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+welcome to home templates
+</body>
+</html>
