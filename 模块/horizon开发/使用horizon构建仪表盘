@@ -1,0 +1,115 @@
+1.文件结构
+myplugin #dashboard主目录
+│
+├── myplugin #app应用
+│   ├── __init__.py
+│   │
+│   ├── enabled #动态加载模块(数据模型)
+│   │   └──_31000_myplugin.py
+│   │
+│   ├── api #获取数据api
+│   │   ├──__init__.py
+│   │   ├── my_rest_api.py #使用angular创建插件需要用到(调用myservice)
+│   │   └── myservice.py #各服务之间的交互
+│   │
+│   ├── content #内部子dashboard
+│   │   ├──__init__.py
+│   │   └── mypanel #内部子panel
+│   │       ├── __init__.py
+│   │       ├── tables.py #表格生成类
+│   │       ├── tabs.py   #调用表格生成类(获取数据糅合tables,模板.数据)
+│   │       ├── forms.py  #表单生成类
+│   │       ├── panel.py #panel关系文件
+│   │       ├── tests.py #测试文件
+│   │       ├── urls.py  #url路由关系
+│   │       ├── views.py #视图函数
+│   │       └── templates #模板文件
+│   │           └── mypanel
+│   │               └── index.html
+│   │
+│   └── static #静态文件
+│   |   └── dashboard
+│   |       └── identity
+│   |           └── myplugin
+│   |               └── mypanel
+│   |                   ├── mypanel.html
+│   |                   ├── mypanel.js
+│   |                   └── mypanel.scss
+│   │
+│   └── locale
+│       └── <lang>
+│            └── LC_MESSAGES
+│                ├── django.po
+│                └── djangojs.po
+│
+├── setup.py
+├── setup.cfg
+├── LICENSE
+├── MANIFEST.in
+├── README.rst
+├── babel-django.cfg
+└── babel-djangojs.cfg
+
+
+2.enabled 文件(单个panel加入dashboard)
+# 添加到HORIZON_CONFIG的面板的名称(必须)
+PANEL = 'mypanel'
+
+# 与面板关联的仪表板的名称(必须)
+PANEL_DASHBOARD = 'identity'
+
+# 添加的面板的Python面板类
+ADD_PANEL = 'myplugin.content.mypanel.panel.MyPanel'
+
+# 预置到INSTALLED_APPS的应用程序列表。
+ADD_INSTALLED_APPS = ['myplugin']
+
+# 引导时要加载的AngularJS模块列表
+ADD_ANGULAR_MODULES = ['horizon.dashboard.identity.myplugin.mypanel']
+
+# 可以在程序中自动发现静态资源
+AUTO_DISCOVER_STATIC_FILES = True
+
+# 添加js压缩文件列表
+ADD_JS_FILES = []
+
+# 添加css3(scss)文件列表
+ADD_SCSS_FILES = ['dashboard/identity/myplugin/mypanel/mypanel.scss']
+
+# 添加头部页眉
+ADD_HEADER_SECTIONS = ['myplugin.content.mypanel.views.HeaderView',]
+
+panel.py文件(定义插件内容所在的dashboard)
+from django.utils.translation import ugettext_lazy as _
+import horizon
+class MyPanel(horizon.panel):
+    name=_('My panel') #页面显示名称
+    slug='mypanel' #唯一的表示符号
+
+urls.py文件(处理用户访问url的走向)
+from django.conf.urls import url
+from myplugin.content.mypanel import views
+urlpatterns=[
+    url(r'^$',views.IndexView.as_view(),name='index'),
+]
+
+views.py文件(渲染页面并呈现给用户)
+from django.views import generic
+class IndexView(generic.TemplateView):
+    template_name='identity/mypanel/index.html'
+
+index.html文件(tempalte模板文件)
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "My plugin" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_domain_page_header.html"
+    with title=_("My Panel") %}
+{% endblock page_header %}
+
+{% block main %}
+  Hello world!
+{% endblock %}
+
+

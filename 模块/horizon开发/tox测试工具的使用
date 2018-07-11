@@ -1,0 +1,20 @@
+默认tox已python3
+
+horizon运行所有测试(tox.ini设置部分操作)
+tox python2中(tox -e py27)
+
+创建一个测试的dashboard界面
+mkdir -p opesntack_dashboard/dashboards/mydashboard
+tox -e py27 -- startdash mydashboard --target openstack_dashboard/dashboards/mydashboard/
+
+创建一个测试的panel子版块
+mkdir -p openstack_dashboard/dashboards/mydashboard/mypanel
+tox -e py27 -- startpanel mypanel \
+--dashboard=openstack_dashboard.dashboards.mydashboard \
+--target=openstack_dashboard/dashboards/mydashboard/mypanel
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+index.html(模板页面,在angularjs中使用{$ $})
+
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "My panel" %}{% endblock %}
+
+{% block page_header %}
+  <hz-page-header
+    header="{$ 'My panel' | translate $}"
+    description="{$ 'My custom panel!' | translate $}">
+  </hz-page-header>
+{% endblock page_header %}
+
+{% block main %}
+  <ng-include
+    src="'{{ STATIC_URL }}dashboard/identity/myplugin/mypanel/mypanel.html'">
+  </ng-include>
+{% endblock %}
+
+书写angularjs的控制器
+(function() {
+  'use strict';
+
+  angular
+    .module('horizon.dashboard.identity.myplugin.mypanel', [])
+    .controller('horizon.dashboard.identity.myPluginController',
+      myPluginController);
+
+  myPluginController.$inject = [ '$http' ];
+
+  function myPluginController($http) {
+    var ctrl = this;
+    ctrl.items = [
+      { name: 'abc', id: 123 },
+      { name: 'efg', id: 345 },
+      { name: 'hij', id: 678 }
+    ];
+  }
+})();
+<div ng-controller="horizon.dashboard.identity.myPluginController as ctrl"> #控制器
+  <div>Loading data from your controller:</div>
+  <ul>
+    <li ng-repeat="item in ctrl.items">  #循环
+      <span class="c1">{$ item.name $}</span> #数据
+      <span class="c2">{$ item.id $}</span>
+    </li>
+  </ul>
+</div>

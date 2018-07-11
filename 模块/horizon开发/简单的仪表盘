@@ -1,0 +1,159 @@
+创建一个dashboard
+mkdir opesntack_dashboard/dashboards/mydashboard
+python manage.py startdash mydashboard --target=openstack_dashboard/dashboards/mydashboard
+
+创建一个panel
+mkdir opesntack_dashboard/dashboards/mydashboard/mypanel
+python manage.py startpanel mypanel --target=openstack_dashboard/dashboards/mydashboard/mypanel
+
+创建后的结构
+mydashboard
+├── dashboard.py
+├── __init__.py
+├── mypanel
+│   ├── __init__.py
+│   ├── panel.py
+│   ├── templates
+│   │   └── mypanel
+│   │       └── index.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── static
+│   └── mydashboard
+│       ├── css
+│       │   └── mydashboard.css
+│       └── js
+│           └── mydashboard.js
+└── templates
+    └── mydashboard
+        └── base.html
+
+
+1.dashboard.py文件(注册horizon页面dashboard文件)
+    from django.utils.translation import ugettext_lazy as _
+    import horizon
+    class Mygroup(horizon.PanelGroup): #子项目(panel组)类
+        name = _("My Group")           #组名称
+        slug = "mygroup"               #唯一标识符
+        panels = ('mypanel',)          #组下的panel
+
+    class Mydashboard(horizon.Dashboard): #dashboard类
+        name = _("My Dashboard")    #dashboard名称
+        slug = "mydashboard"        #唯一标识符
+        panels = (Mygroup,)         # 添加子项目
+        default_panel = 'mypanel'  # 添加默认显示项目
+
+    horizon.register(Mydashboard)  #注册dashboard
+
+2.tables.py文件(生成tables模型) 数据模型model
+    from django.utils.translation ipmort ugettext_lazy as _
+    from horizon import tables
+    class MyFilterAction(tables.FilterAction): #表格过滤类
+        name='myfilter' #定义这个类的名称
+
+    class InstancesTable(tables.DataTable):
+        #'name'检索数据,verbose_name 数据列显示的名称
+        name=tables.Colum('name',verbose_name=_('Name')) #name表格字段
+        status=tables.Colum('status',verbose_name=_('Status')) #状态字段
+        zone=tables.Colum('zone',verbose_name=_('Zone')) 可用域字段
+        image_name=tables.Colum('image',verbose_name('Image')) 镜像字段
+
+        class Meta(object): #源数据类(instances表的元对象)
+            name='instances'  #定义这个类的名称
+            verbose_name=_('Instancees') #表的名称
+            table_actions=(MyFilterAction,) #这个表的动作,执行MyFilterAction动作
+
+
+3.tabs.py文件(tables的视图文件) 数据视图views(伪视图类)
+    from django.utils.translation import ugettext_lazy as _
+    from horizon import exceptions #错误调用api日志输出
+    from horizon import tabs
+    from openstack_dashboard import api
+    from openstack_dashboard.dashboards.mydashboard.mypanel import tables
+
+    class InstanceTab(tabs.TableTab): #获取实例数据类
+    name = _("Instances Tab")         #定义了这个视图类名称
+    slug = "instances_tab"            #唯一标识符
+    table_classes = (tables.InstancesTable,) #需要使用的table模型
+    template_name = ("horizon/common/_detail_table.html") #需要使用的tempalte模板(_detail_table分页tables模板)
+    preload = False                   #数据的加载方式(默认使用api,True使用Ajax)
+
+    def has_more_data(self, table):
+        return self._has_more
+
+    def get_instances_data(self):
+        try:
+            marker = self.request.GET.get(
+                        tables.InstancesTable._meta.pagination_param, None) #获取当前传递的分页参数
+
+             #获取实例列表search_opts,marker页数,paginate是否分页,返回实例列表和带有tenant信息的request
+            instances, self._has_more = api.nova.server_list(
+                self.request,
+                search_opts={'marker': marker, 'paginate': True})
+
+            return instances
+        except Exception:  #获取失败返回
+            self._has_more = False
+            error_message = _('Unable to get instances')
+            exceptions.handle(self.request, error_message)
+
+            return []
+
+    class MypanelTabs(tabs.TabGroup): #tabs组类
+        slug = "mypanel_tabs"         #唯一标识符
+        tabs = (InstanceTab,)         #这个组存在的tab
+        sticky = True                 #是否处理tables生成tables页面
+
+4.views.py真正的views文件(总视图文件)
+    from horizon import tabs
+    from openstack_dashboard.dashboards.mydashboard.mypanel \
+        import tabs as mydashboard_tabs
+
+    class IndexView(tabs.TabbedTableView): #tabs试图类
+        tab_group_class = mydashboard_tabs.MypanelTabs #所使用的tab视图类
+        template_name = 'mydashboard/mypanel/index.html' #所使用的总模板
+
+        def get_data(self, request, context, *args, **kwargs):
+            # Add data to the context here...
+            return context
+
+5.urls.py(url路由处理文件)
+    from django.conf.urls import url
+    from openstack_dashboard.dashboards.mydashboard.mypanel import views
+    urlpatterns = [
+        url(r'^$', views.IndexView.as_view(), name='index'),
+    ]
+
+6.index模板文件(template模板)
+    {% extends 'base.html' %}
+    {% load i18n %}
+    {% block title %}{% trans "My Panel" %}{% endblock %}
+
+    {% block page_header %}
+       {% include "horizon/common/_page_header.html" with title=_("My Panel") %}
+    {% endblock page_header %}
+
+    {% block main %}
+    <div class="row">
+       <div class="col-sm-12">
+       {{ tab_group.render }} #嵌入tab视图函数的模板(_detail_table.html)
+       </div>
+    </div>
+    {% endblock %}
+
+7.编辑enable文件动态加载dashboard(文件名称_50_mydashboard.py)
+
+    #添加dashboard到horizon
+    DASHBOARD = 'mydashboard'
+
+    #设置settings.disabled
+    DISABLED = False
+
+    #添加项目路径到app中
+    ADD_INSTALLED_APPS = [
+        'openstack_dashboard.dashboards.mydashboard',
+    ]
+
+8.重新运行horizon
+    python manage.py runserver 0:8001
