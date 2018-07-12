@@ -1,0 +1,124 @@
+依照上次的简单的仪表盘添加动作
+额外添加或修改的文件
+mydashboard/
+├── mypanel
+│   ├── forms.py
+│   ├── tables.py
+│   ├── templates
+│   │   └── mypanel
+│   │       ├── _create_snapshot.html
+│   │       ├── create_snapshot.html
+│   ├── urls.py
+│   ├── views.py
+
+1. forms.py 文件(model模型)
+from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _  #惰性翻译
+from horizon import exceptions                           #处理api错误信息获取
+from horizon import forms                                #表单类
+from openstack_dashboard import api                      #openstack中api的调用
+class CreateSnapshot(forms.SelfHandlingForm):            #数据模型类,定义数据格式
+    instance_id=forms.CharField(label=_('Instance ID'),widget=forms.HiddenInput(),required=False) #实例id表单
+    name=forms.CharField(max_length=255,label=_('Snapshort Name'))                                #名称表单
+    def handle(self,request,data):                       #获取数据
+        try:
+            snapshot=api.nova.snapshot_create(request,data['instance_id'],data['name']) #调用api
+            return snapshot                                                             #返回快照
+        except Exception:
+            exceptions.handle(request,_('Unable to create snapshot'))
+
+
+2. views.py文件(view视图)
+    from django.core.urlresolvers import reverse
+    from django.core.urlresolvers import reverse_lazy
+    from django.utils.translation import ugettext_lazy as _
+    from horizon import exceptions
+    from horizon import forms
+    from horizon.utils import memoized
+    from openstack_dashboard import api
+    from openstack_dashboard.dashboards.mydashboard.mypanel \
+        import forms as project_forms
+
+    class CreateSnapshotView(forms.ModalFormView):  #处理创建快照类
+        form_class = project_forms.CreateSnapshot   #创建快照使用的模型
+        template_name = 'mydashboard/mypanel/create_snapshot.html' #创建快照使用的模板
+        success_url = reverse_lazy("horizon:project:images:index") #创建成功后跳转url
+        modal_id = "create_snapshot_modal"                         #
+        modal_header = _("Create Snapshot")                        #表单的头部名称
+        submit_label = _("Create Snapshot")                        #提交按钮名称
+        submit_url = "horizon:mydashboard:mypanel:create_snapshot" #表单提交地址
+
+        @memoized.memoized_method #添加缓存
+        def get_object(self): #获取验证实例
+            try:
+                return api.nova.server_get(self.request,
+                                           self.kwargs["instance_id"])
+            except Exception:
+                exceptions.handle(self.request,
+                                  _("Unable to retrieve instance."))
+
+        def get_initial(self): #获取instance_id
+            return {"instance_id": self.kwargs["instance_id"]}
+
+        def get_context_data(self, **kwargs): #传递数据给form_class
+            context = super(CreateSnapshotView, self).get_context_data(**kwargs)
+            instance_id = self.kwargs['instance_id'] #添加id数据
+            context['instance_id'] = instance_id     #添加id数据
+            context['instance'] = self.get_object()  #添加实例对象
+            context['submit_url'] = reverse(self.submit_url, args=[instance_id]) #添加提交url
+            return context
+
+3.tables.py文件(表格中添加动作)
+    from django.utils.translation import ugettext_lazy as _
+    from horizon import tables
+
+
+    def is_deleting(instance):
+        task_state = getattr(instance, "OS-EXT-STS:task_state", None)
+        if not task_state:
+            return False
+        return task_state.lower() == "deleting"
+
+    class CreateSnapshotAction(tables.LinkAction): #添加创建快照的动作
+        name = "snapshot"  #动作的名称
+        verbose_name = _("Create Snapshot") #页面显示名称
+        url = "horizon:mydashboard:mypanel:create_snapshot" #获取提交表单url
+        classes = ("ajax-modal",)  #class使用的提交方式
+        icon = "camera"            #
+
+        def allowed(self, request, instance=None): #检测实例的状态
+            return instance.status in ("ACTIVE") \ #如果是ACTIVE状态并且不是删除状态返回True
+                and not is_deleting(instance)
+
+        class Meta(object):
+            name = "instances"
+            verbose_name = _("Instances")
+            table_actions = (MyFilterAction,)
+            row_actions = (CreateSnapshotAction,) #额外添加动作
+
+4.urls.py文件(url路由关系映射)
+from django.conf.urls import url
+
+from openstack_dashboard.dashboards.mydashboard.mypanel import views
+urlpatterns = [
+    url(r'^(?P<instance_id>[^/]+)/create_snapshot/$',
+        views.CreateSnapshotView.as_view(),
+        name='create_snapshot'),
+]
+
+
+5.重新运行horizon
+    python manage.py runserver 0:8001
+
+
+调用流程
+    页面访问http://172.24.2.10:6354/mydashboard/ --->urls.py路由处理---->
+        调用views视图函数 --->
+        调用tabs.py生成--->传递api数据给tables数据模型--->渲染模板---->返回views视图
+
+
+    GET 创建快照urlhttp://172.24.2.10:6354/mydashboard/<instance_id>/create_snapshot/ --->urls.py路由处理---->
+        调用views视图函数---->渲染创建模板获取实例对象传递给forms---渲染页面--->创建页面
+    POST ajax提交创建--->forms.handle处理创建--->创建成功跳转url
+
+

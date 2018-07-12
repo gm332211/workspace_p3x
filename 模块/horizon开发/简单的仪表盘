@@ -73,32 +73,32 @@ mydashboard
     from openstack_dashboard.dashboards.mydashboard.mypanel import tables
 
     class InstanceTab(tabs.TableTab): #获取实例数据类
-    name = _("Instances Tab")         #定义了这个视图类名称
-    slug = "instances_tab"            #唯一标识符
-    table_classes = (tables.InstancesTable,) #需要使用的table模型
-    template_name = ("horizon/common/_detail_table.html") #需要使用的tempalte模板(_detail_table分页tables模板)
-    preload = False                   #数据的加载方式(默认使用api,True使用Ajax)
+        name = _("Instances Tab")         #定义了这个视图类名称
+        slug = "instances_tab"            #唯一标识符
+        table_classes = (tables.InstancesTable,) #需要使用的table模型
+        template_name = ("horizon/common/_detail_table.html") #需要使用的tempalte模板(_detail_table分页tables模板)
+        preload = False                   #数据的加载方式(默认使用api,True使用Ajax)
 
-    def has_more_data(self, table):
-        return self._has_more
+        def has_more_data(self, table):
+            return self._has_more
 
-    def get_instances_data(self):
-        try:
-            marker = self.request.GET.get(
-                        tables.InstancesTable._meta.pagination_param, None) #获取当前传递的分页参数
+        def get_instances_data(self):
+            try:
+                marker = self.request.GET.get(
+                            tables.InstancesTable._meta.pagination_param, None) #获取当前传递的分页参数
 
-             #获取实例列表search_opts,marker页数,paginate是否分页,返回实例列表和带有tenant信息的request
-            instances, self._has_more = api.nova.server_list(
-                self.request,
-                search_opts={'marker': marker, 'paginate': True})
+                 #获取实例列表search_opts,marker页数,paginate是否分页,返回实例列表和带有tenant信息的request
+                instances, self._has_more = api.nova.server_list(
+                    self.request,
+                    search_opts={'marker': marker, 'paginate': True})
 
-            return instances
-        except Exception:  #获取失败返回
-            self._has_more = False
-            error_message = _('Unable to get instances')
-            exceptions.handle(self.request, error_message)
+                return instances
+            except Exception:  #获取失败返回
+                self._has_more = False
+                error_message = _('Unable to get instances')
+                exceptions.handle(self.request, error_message)
 
-            return []
+                return []
 
     class MypanelTabs(tabs.TabGroup): #tabs组类
         slug = "mypanel_tabs"         #唯一标识符
