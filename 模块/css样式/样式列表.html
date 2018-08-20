@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .c1{
+            /*通用样式*/
+            width: 100px; /*宽度*/
+            height: 100px;/*高度*/
+        }
+        .c2{
+            /*边框样式 宽度,边框线条,颜色*/
+            border: 1px solid red; /*(left,right,bottonm,top)*/
+            /*border-left: 1px solid red;*/
+        }
+        .c3{
+            /*文字样式*/
+            font-size: 12px;    /*字体大小*/
+            color: #000;        /*字体颜色*/
+            text-align: center; /*字体水平居中*/
+            line-height: 20px; /*字体垂直居中*/
+            font-weight: 200;  /*字体加粗*/
+        }
+        .c4{
+            /*浮动样式*/
+            float: left; /*左右浮动(right) 不够会向下压缩*/
+            clear: both; /*清除浮动*/
+        }
+        .c5{
+            /*标签转化*/
+            display: none; /*不显示标签*/
+            /*display: block;*/   /*变成块级标签 可以定义高度宽度和边距padding，margin*/
+            /*display: inline;*/  /*变成行内标签 不能定义高度宽度和边距padding，margin*/
+            /*display: inline-block;*/  /*变成行内标签 可以定义高度宽度和边距padding，margin*/
+        }
+        .c6{
+            /*边距*/
+            margin:0;   /*外边距 标签外部边距*/
+            padding: 0; /*内边距 标签内部边距，自身变大*/
+            /*margin:0 auto;*/  /*标签居中使用*/
+        }
+    </style>
+</head>
+<body>
+    <div class="c1" style="width: 100px;height:20px;"></div>
+    <div class="c2" style="width: 100px;height:20px; border: 1px solid red;">test</div>
+</body>
+</html>

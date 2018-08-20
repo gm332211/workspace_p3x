@@ -6,25 +6,29 @@ python manage.py startdash mydashboard --target=openstack_dashboard/dashboards/m
 mkdir opesntack_dashboard/dashboards/mydashboard/mypanel
 python manage.py startpanel mypanel --target=openstack_dashboard/dashboards/mydashboard/mypanel
 
-创建后的结构
-mydashboard
+目录结构
+mydashboard/
 ├── dashboard.py
 ├── __init__.py
 ├── mypanel
-│   ├── __init__.py
-│   ├── panel.py
-│   ├── templates
-│   │   └── mypanel
-│   │       └── index.html
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-├── static
-│   └── mydashboard
-│       ├── css
-│       │   └── mydashboard.css
-│       └── js
-│           └── mydashboard.js
+│   ├── __init__.py
+│   ├── forms.py #表单生成类
+│   ├── tables.py #表格生成类
+│   ├── tabs.py #调用表格生成类(获取数据糅合tables,模板.数据)
+│   ├── urls.py #url路由关系
+│   ├── views.py #视图函数
+│   ├── panel.py #panel关系文件
+│   ├── templates #模板文件
+│   │   └── mypanel
+│   │       ├── _create_snapshot.html
+│   │       ├── create_snapshot.html
+│   │       └── index.html
+├── static 静态文件目录
+│   └── mydashboard
+│       ├── js
+│       │   └── mydashboard.js
+│       └── scss
+│           └── mydashboard.scss
 └── templates
     └── mydashboard
         └── base.html
@@ -157,3 +161,5 @@ mydashboard
 
 8.重新运行horizon
     python manage.py runserver 0:8001
+
+参考文档 https://docs.openstack.org/horizon/latest/contributor/tutorials/dashboard.html

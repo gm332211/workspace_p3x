@@ -1,0 +1,89 @@
+工作流:工作流是带有选项的复杂表单，每个工作流必须包含扩展Workflow， Step和的类Action
+1. url.py 路由处理
+    RESOURCE_CLASS = r'^(?P<resource_class_id>[^/]+)/%s$'
+    urlpatterns = [
+        url(RESOURCE_CLASS % 'update', UpdateView.as_view(), name='update')
+    ]
+
+2.views.py 视图函数
+    class UpdateView(workflows.WorkflowView):
+        workflow_class = UpdateResourceClass
+
+        #获取来之url传递过来的数据,数据在self和kwargs中
+        def get_context_data(self, **kwargs):
+            #这里我们会将self和kwargs的数据传递个模板
+            context = super(UpdateView, self).get_context_data(**kwargs)
+
+            #提供数据到上下文context中,在模板中使用context传递的数据
+            context["resource_class_id"] = self.kwargs['resource_class_id']
+
+            return context
+
+        #获取url中的数据,处理成需要的数据对象
+        def _get_object(self, *args, **kwargs):
+
+            #这个方法调用api获取数据对象传递给上下文context
+            resource_class_id = self.kwargs['resource_class_id']
+
+        #初始化数据
+        def get_initial(self):
+            #获得api获取的对象列表
+            resource_class = self._get_object()
+            return {'resource_class_id': resource_class.id,
+                    'name': resource_class.name,
+                    'service_type': resource_class.service_type}
+
+3.workflows.py 工作流处理
+    1.执行动作类
+    class ResourcesAction(workflows.Action):
+        #定义了一个表单输入框(提交数据的地方)
+        name = forms.CharField(max_length=255,
+                               label=_("Testing Name"),
+                               help_text="",
+                               required=True)
+
+        #处理用户表单的数据
+        def handle(self, request, data):
+            pass
+            #如果我们想要使用url中的数据必须通过views get_initial函数获取和depends_on列表中列出
+            self.initial['resource_class_id'] or data['resource_class_id'].
+
+            #如果想要获取传递数据需要contribute函数安正确的步骤获取数据
+
+    2.步骤流程类(获取提交的信息类)
+    class UpdateResources(workflows.Step):
+
+        action_class = ResourcesAction
+
+        #将数据传递到Workflow的上下文的函数
+        #contributed函数获取url传递数据提供给Workflow的上下文
+        depends_on = ("resource_class_id",)
+
+        #调用contributes函数并定义需要获取的字段#resources_object_ids索引
+        contributes = ("resources_object_ids", "name")
+
+        #获取额外提交的数据
+        def contribute(self, data, context):
+            #从workflow中获取http请求
+            request = self.workflow.request
+            if data:
+                #如果想要获取其他提交的数据需要把这个数据写入到上下文中
+                context["resources_object_ids"] =\
+                    request.POST.getlist("resources_object_ids")
+
+            #合并上下文中新的数据
+            context.update(data)
+            return context
+
+    3.工作流类
+    class UpdateResourceClass(workflows.Workflow):
+        #定义他的步骤类
+        default_steps = (UpdateResources,)
+
+        #最终处理函数
+        def handle(self, request, data):
+            pass
+            #最后一个方法(在所有动作处理方法后),所有step的数据都在这里(contributes和depends_on数据)
+            #data["resources_object_ids"], data["name"] and data["resources_class_id"] are available here.
+
+参考文档 https://docs.openstack.org/horizon/latest/contributor/topics/workflows.html

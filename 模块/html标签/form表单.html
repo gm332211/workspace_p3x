@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<form action="" method="get" enctype="multipart/form-data">
+    <input type="text" name="username" value="admin">
+    <input type="password" name="password" value="123456">
+
+    男:<input type="radio" name="gender" checked="checked" value="1">
+    女:<input type="radio" name="gender" value="2">
+    篮球:<input type="checkbox" name="hobby" value="1" checked="checked">
+    网球:<input type="checkbox" name="hobby" value="2">
+    足球:<input type="checkbox" name="hobby" value="3" checked="checked">
+    <p>上传文件</p>
+    <input type="file" name="filename">
+    <textarea name="textfile">test</textarea>
+    <select name="city" id="city" size="4" multiple="multiple">
+        <optgroup label="test">
+            <option value="4">op test</option>
+        </optgroup>
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+        <option value="3">深圳</option>
+    </select>
+    <input type="button" value="button提交">
+    <input type="submit" value="submmit提交">
+    <input type="reset" value="reset重置">
+
+</form>
+</body>
+</html>

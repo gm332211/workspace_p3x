@@ -1,0 +1,65 @@
+angularjs使得开发单一页面的应用程序变得容易
+angularjs可以把应用程序数据绑定到html元素上
+         可以克隆和重复html元素
+         可以隐藏和显示html元素
+         可以在html元素背后添加代码
+         支持输入验证
+
+angularjs应用
+    angularjs模块(module)定义了angularjs应用
+    angularjs控制器(Controller)用于控制angularjs应用
+    ng-app 指明了应用 ng-controller指明了控制器
+
+模块定义应用
+    var app=angular.module('myApp',[]);
+    控制器控制应用
+    app.controller('myCtrl',function($scope){
+        $scope.firstname='john';
+        $scope.lastname='Doe';
+    });
+
+angularjs表达式
+    表达式协助双大括号内{{expression}} (例如:{{5+5}},{{firstname+''+lastname}})
+    AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同工之妙。
+    AngularJS 将在表达式书写的位置"输出"数据。
+    数字实例{{5*5}} 或者ng-bind="firstnum*lastnum"
+    字符串实例{{firstname+''+lastname}} 或者ng-bind="firstname+''+lastname"
+    对象ng-init="person={firstname:'john',lastname:'Doe'}" 调用对象{{person.firstname}}
+    列表ng-inti="list=[1,3,5,7,9]" 调用对象{{list[0]}}
+和js的区别
+    类似于 JavaScript 表达式，AngularJS 表达式可以包含字母，操作符，变量。
+    与 JavaScript 表达式不同，AngularJS 表达式可以写在 HTML 中。
+    与 JavaScript 表达式不同，AngularJS 表达式不支持条件判断，循环及异常。
+    与 JavaScript 表达式不同，AngularJS 表达式支持过滤器。
+指令
+    ng-app 指令定义一个 AngularJS 应用程序。(div)
+        ng-app 指令定义了 AngularJS 应用程序的 根元素。
+        ng-app 指令在网页加载完毕时会自动引导（自动初始化）应用程序。
+    ng-model 指令吧元素值(输入域的值)绑定到应用程序上(动态获取数据)
+        为应用程序数据提供类型验证（number、email、required）。
+        为应用程序数据提供状态（invalid、dirty、touched、error）。
+        为 HTML 元素提供 CSS 类。
+        绑定 HTML 元素到 HTML 表单。
+    ng-bind 指令吧应用程序数据绑定到HTML视图 (绑定数据)
+        ng-init 指令为 AngularJS 应用程序定义了 初始值。
+        通常情况下，不使用 ng-init。您将使用一个控制器或模块来代替它。
+    ng-init 初始化应用变量
+    data-ng-* 对html5生效
+数据绑定
+    {{firstname}}是通过ng-model="firstname"进行同步
+重复页面元素(列表的形式循环)
+    数据 ng-init="names=['gumimng','xiaoming"]"
+    重复元素 <li ng-repeat="x in names">{{x}}</li>
+循环字典元素
+    数据 ng-init="names=[{name:'xiaoming',age:22},{name:'gm',age:23}]"
+    重复元素 <li ng-repeat="x in names">{{x.name+x.age}}</li>
+自定义指令(默认元素名,属性EA)
+    E元素名 <runoob-directive></runoob-directive>
+    A属性 <div runoob-directive></div>
+    C类名 <div class="runoob-directive"></div>
+    M注释 <!-- directive: runoob-directive -->
+
+应用状态(ng-show值为True显示数据)
+    {{myForm.myAddress.$valid}} 值是合法的为True
+    {{myForm.myAddress.$dirty}} 值改变了为True
+    {{myForm.myAddress.$touched}} 点击输入框后为True

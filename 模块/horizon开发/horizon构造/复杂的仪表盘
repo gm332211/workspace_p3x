@@ -12,20 +12,20 @@ mydashboard/
 │   ├── views.py
 
 1. forms.py 文件(model模型)
-from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _  #惰性翻译
-from horizon import exceptions                           #处理api错误信息获取
-from horizon import forms                                #表单类
-from openstack_dashboard import api                      #openstack中api的调用
-class CreateSnapshot(forms.SelfHandlingForm):            #数据模型类,定义数据格式
-    instance_id=forms.CharField(label=_('Instance ID'),widget=forms.HiddenInput(),required=False) #实例id表单
-    name=forms.CharField(max_length=255,label=_('Snapshort Name'))                                #名称表单
-    def handle(self,request,data):                       #获取数据
-        try:
-            snapshot=api.nova.snapshot_create(request,data['instance_id'],data['name']) #调用api
-            return snapshot                                                             #返回快照
-        except Exception:
-            exceptions.handle(request,_('Unable to create snapshot'))
+    from django.core.urlresolvers import reverse
+    from django.utils.translation import ugettext_lazy as _  #惰性翻译
+    from horizon import exceptions                           #处理api错误信息获取
+    from horizon import forms                                #表单类
+    from openstack_dashboard import api                      #openstack中api的调用
+    class CreateSnapshot(forms.SelfHandlingForm):            #数据模型类,定义数据格式
+        instance_id=forms.CharField(label=_('Instance ID'),widget=forms.HiddenInput(),required=False) #实例id表单
+        name=forms.CharField(max_length=255,label=_('Snapshort Name'))                                #名称表单
+        def handle(self,request,data):                       #获取数据
+            try:
+                snapshot=api.nova.snapshot_create(request,data['instance_id'],data['name']) #调用api
+                return snapshot                                                             #返回快照
+            except Exception:
+                exceptions.handle(request,_('Unable to create snapshot'))
 
 
 2. views.py文件(view视图)
@@ -97,14 +97,14 @@ class CreateSnapshot(forms.SelfHandlingForm):            #数据模型类,定义
             row_actions = (CreateSnapshotAction,) #额外添加动作
 
 4.urls.py文件(url路由关系映射)
-from django.conf.urls import url
+    from django.conf.urls import url
 
-from openstack_dashboard.dashboards.mydashboard.mypanel import views
-urlpatterns = [
-    url(r'^(?P<instance_id>[^/]+)/create_snapshot/$',
-        views.CreateSnapshotView.as_view(),
-        name='create_snapshot'),
-]
+    from openstack_dashboard.dashboards.mydashboard.mypanel import views
+    urlpatterns = [
+        url(r'^(?P<instance_id>[^/]+)/create_snapshot/$',
+            views.CreateSnapshotView.as_view(),
+            name='create_snapshot'),
+    ]
 
 
 5.重新运行horizon
@@ -121,4 +121,4 @@ urlpatterns = [
         调用views视图函数---->渲染创建模板获取实例对象传递给forms---渲染页面--->创建页面
     POST ajax提交创建--->forms.handle处理创建--->创建成功跳转url
 
-
+参考文档 https://docs.openstack.org/horizon/latest/contributor/tutorials/table_actions.html

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="" ng-init="firstnum=1;lastnum=5">
+    <p>价格计算器:</p>
+    <span>价格:</span><input type="number" ng-model="firstnum">
+    <span>数量:</span><input type="number" ng-model="lastnum">
+    <p>总价格:{{firstnum*lastnum}}</p>
+</div>
+</body>
+</html>

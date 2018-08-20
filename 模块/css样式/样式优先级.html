@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <link rel="stylesheet" href="css/test.css">
+    <!--外联优先级最低 但可以样式共享,本质是粘贴到html中-->
+    <style>
+        /*内敛优先级第二*/
+        .c1{
+            background-color: red;
+            height:500px;
+            width:500px;
+        }
+        .c2{
+            background-color: blue;
+        }
+        /*内联中最下面的样式优先级最高*/
+    </style>
+</head>
+<body>
+    <!--内嵌的优先级最高-->
+    <div class="c1 c2" style="width:100px;height:100px;"></div>
+    <div class="c3"></div>
+</body>
+</html>

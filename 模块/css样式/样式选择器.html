@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        /*id选择器*/
+        #i1{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+        /*class选择器*/
+        .c1{
+            background-color:blue;
+            width:100px;
+            height:100px;
+        }
+        /*标签选择器*/
+        div{
+            float: left;
+        }
+        /*属性选择器*/
+        input[type='text']{
+            background-color: red;
+        }
+        /*层级选择器*/
+        a span{
+            color: red;
+        }
+        /*组合选择器*/
+        .c2,.c3{
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1"></div>
+    <div id="i1"></div>
+    <input type="text">
+    <input type="password">
+    <a href="http://www.baidu.com"><span>百度</span></a>
+    <div class="c2"></div>
+    <div class="c3"></div>
+</body>
+</html>

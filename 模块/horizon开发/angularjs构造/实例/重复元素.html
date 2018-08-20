@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="" ng-init="names=['guming','xiaoming'];test=[{name:'xiaoming',age:22},{name:'guming',age:23}]">
+    <li ng-repeat="x in names">
+        {{x}}
+    </li>
+    <li ng-repeat="x in test">{{x.name + x.age}}</li>
+</div>
+<div ng-app="test" ng-init="names=[{name:'xiaoming',age:22},{name:'guming',age:23}]">
+
+</div>
+</body>
+</html>
