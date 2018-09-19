@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .c1{
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: #000;
+            opacity: 0.6;
+        }
+        .c2{
+            width: 200px;
+            height: 100px;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -100px;
+            background: white;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="添加" onclick="Showadd()">
+<!--遮罩层-->
+<div id="i1" class="c1 hide"></div>
+<!--弹框-->
+<div id="i2" class="c2 hide">
+    <input type="text">
+    <input type="text">
+    <input type="button" value="取消" onclick="Hideadd()">
+    <input type="button" value="提交">
+</div>
+<script>
+    // 显示遮罩层和弹框
+    function Showadd() {
+        document.getElementById('i1').classList.remove('hide');
+        document.getElementById('i2').classList.remove('hide');
+    }
+    // 隐藏遮罩层和弹框
+    function Hideadd() {
+        document.getElementById('i1').classList.add('hide');
+        document.getElementById('i2').classList.add('hide');
+    }
+</script>
+</body>
+</html>

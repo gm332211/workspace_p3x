@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .pg-body{
+            height: 2000px;
+        }
+        .a {
+            width: 200px;
+            height: 100px;
+            margin: 0 auto;
+            position: relative;
+            border: 1px solid red;
+        }
+
+        .a1 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #000;
+        }
+
+        .b {
+            width: 200px;
+            height: 100px;
+            margin: 0 auto;
+            position: relative;
+            border: 1px solid red;
+        }
+
+        .b1 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #000;
+        }
+
+        .c {
+            width: 200px;
+            height: 100px;
+            margin: 0 auto;
+            position: relative; /*父级定位*/
+            border: 1px solid red;
+        }
+
+        .c1 {
+            width: 50px;
+            height: 50px;
+            position: absolute; /*基于父级相对定位*/
+            top: 0;
+            right: 0;
+            background: #000;
+        }
+
+        .d {
+            width: 50px;
+            height: 50px;
+            position: fixed; /*绝对浏览器定位*/
+            bottom: 0; /*设置定位*/
+            right: 0;
+            /*left: 0;*/
+            /*top: 0;*/
+        }
+        .mask{ /*遮罩层*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:black;
+            opacity: 0.4; /*背景透明度*/
+            z-index: 2; /*数字大的显示在前面*/
+        }
+        .user_input{ /*用户输入层*/
+            width: 300px;
+            height: 150px;
+            background: white;
+            position: fixed;
+            /*居中*/
+            top:50%;
+            left:50%;
+            margin-left: -150px;
+            margin-top: -75px;
+            z-index: 3;
+        }
+        .img{ /*子级内容超过大小生效*/
+            overflow: hidden; /*隐藏多余部分*/
+            /*overflow: auto;*/ /*出现滚动条*/
+        }
+    </style>
+</head>
+<body>
+<div class="pg-header"></div>
+<div class="pg-body">
+    <div class="a">
+        <div class="a1"></div>
+    </div>
+    <div class="b">
+        <div class="b1"></div>
+    </div>
+    <div class="c">
+        <div class="c1"></div>
+    </div>
+</div>
+<div class="mask"></div>
+<div class="user_input"></div>
+<div class="d">返回顶部</div>
+<div class="pg-footer"></div>
+</body>
+</html>

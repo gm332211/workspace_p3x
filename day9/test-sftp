@@ -1,0 +1,45 @@
+#version=DEVEL
+# System authorization information
+auth --enableshadow --passalgo=sha512
+# Use CDROM installation media
+cdrom
+# Use graphical install
+graphical
+# Run the Setup Agent on first boot
+firstboot --enable
+ignoredisk --only-use=sda
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts='us'
+# System language
+lang en_US.UTF-8
+
+# Network information
+network  --bootproto=dhcp --device=enp7s0 --onboot=off --ipv6=auto
+network  --bootproto=dhcp --device=enp8s0 --onboot=off --ipv6=auto
+network  --hostname=localhost.localdomain
+
+# Root password
+rootpw --iscrypted $6$VMDM6/Pvth/ZXRs8$ITxHB1N4.dNR6en1G6rBeGBFayU..JfFbnn8HmbWdw.3K8MdE1G4iTbcq6sMtAqw3MuJQFKo.wUEdkC.aUQ4D.
+# System timezone
+timezone America/New_York --isUtc
+# System bootloader configuration
+bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sda
+# Partition clearing information
+clearpart --all --initlabel --drives=sda
+# Disk partitioning information
+part pv.238 --fstype="lvmpv" --ondisk=sda --size=212807
+part /boot --fstype="xfs" --ondisk=sda --size=500
+volgroup centos --pesize=4096 pv.238
+logvol swap  --fstype="swap" --size=8000 --name=swap --vgname=centos
+logvol /  --fstype="xfs" --size=204800 --name=root --vgname=centos
+
+%packages
+@^minimal
+@core
+kexec-tools
+
+%end
+
+%addon com_redhat_kdump --enable --reserve-mb='auto'
+
+%end

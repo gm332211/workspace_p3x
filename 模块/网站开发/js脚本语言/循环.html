@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<script>
+    // 列表循环
+    var obj_list=['1','2','3'];
+    for (var item in obj_list){
+        console.log(obj_list[item])
+    }
+    for (var i=0;i<obj_list.length;i++){
+        console.log(obj_list[i])
+    }
+    // 字典循环
+    var obj_dic={'k1':'1','k2':'2','k3':'3'};
+    for (var key in obj_dic){
+        console.log(key);
+        console.log(obj_dic[key])
+    }
+</script>
+</body>
+</html>

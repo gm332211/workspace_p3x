@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .menu .header{
+            width: 100px;
+            height: 30px;
+            background: #2459a2;
+            color: white;
+            line-height: 30px;
+            text-align: center;
+        }
+        .menu .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <div>
+        <div id="i1" class="header" onclick="Showmenu(nid='i1')">菜单一</div>
+        <div class="content">
+            <div>内容一</div>
+            <div>内容二</div>
+            <div>内容三</div>
+        </div>
+    </div>
+    <div>
+        <div id="i2" class="header" onclick="Showmenu(nid='i2')">菜单二</div>
+        <div class="content hide">
+            <div>内容一</div>
+            <div>内容二</div>
+            <div>内容三</div>
+        </div>
+    </div>
+    <div>
+        <div id="i3" class="header" onclick="Showmenu(nid='i3')">菜单三</div>
+        <div class="content hide">
+            <div>内容一</div>
+            <div>内容二</div>
+            <div>内容三</div>
+        </div>
+    </div>
+</div>
+<script>
+    function Showmenu(nid){
+        var menu_list=document.getElementById(nid).parentElement.parentElement.children;
+        for (var i=0;i<menu_list.length;i++){
+            menu_list[i].children[1].classList.add('hide')
+        }
+        document.getElementById(nid).nextElementSibling.classList.remove('hide')
+    }
+</script>
+</body>
+</html>

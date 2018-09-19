@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .input {
+            width: 200px;
+            height: 25px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .input input {
+            width: 170px;
+            height: 20px;
+            padding-right: 30px;
+        }
+
+        .input .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 0;
+            margin-top: -9px;
+            top: 50%;
+        }
+        .input .user{
+            background-image: url(images/i_name.jpg);
+            background-repeat: no-repeat;
+        }
+        .input .pwd{
+            background-image: url(images/i_pwd.jpg);
+            background-repeat: no-repeat;
+        }
+        .left-float{
+            float: left;
+        }
+        .label .text{
+            text-align: right;
+            height: 25px;
+            margin-right: 5px;
+            margin-bottom: 4px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="login">
+    <div class="label left-float">
+        <div class="text">用户名:</div>
+        <div class="text">密码:</div>
+    </div>
+    <div class="input-region left-float">
+        <div class="input">
+            <input type="text">
+            <span class="icon user">
+            </span>
+        </div>
+        <div class="input">
+            <input type="password">
+            <span class="icon pwd">
+            </span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

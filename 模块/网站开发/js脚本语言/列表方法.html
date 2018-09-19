@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<script>
+    var obj=['1','2','3'];
+    // 尾部添加
+    obj.push('4');
+    // 尾部获取
+    obj.pop();
+    // 头部添加
+    obj.unshift('4');
+    // 头部获取
+    obj.shift();
+    // 需要操作的下标,操作的个数,修改的值
+    // 插入
+    obj.splice(1,0,99);
+    // 删除
+    obj.splice(1,1);
+    // 修改
+    obj.splice(1,1,99);
+    // 切片
+    obj.slice(0,1);
+    // 反转
+    obj.reverse();
+    // 连接
+    obj.join('-');
+    // 拼接
+    obj.concat('-');
+    // 排序
+    obj.sort();
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div id="i1" style="text-align: right">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp欢迎光临</div>
+    <script>
+        function f1() {
+            var tag=document.getElementById('i1');
+            var tag_text=tag.innerText;
+            var f=tag_text.charAt(0);
+            var l=tag_text.substring(1,tag_text.length);
+            tag.innerText=l+f;
+
+
+        }
+        setInterval('f1();',200)
+    </script>
+</body>
+</html>
