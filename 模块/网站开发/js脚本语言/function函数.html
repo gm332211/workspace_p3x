@@ -7,11 +7,22 @@
 </head>
 <body>
 <script>
+    //---普通函数
     // 函数的声明 形式参数
     function f1(a,b,c) {
+        return a;
     }
     // 函数的调用 实际参数
-    f1(1,2,3);
+    var obj_value=f1(1,2,3);
+    console.log(obj_value);
+    //---匿名函数
+    setInterval(function () {
+        console.log(123)
+    },5000)
+    //---自执行函数
+    (function (arg) {
+        console.log(arg)
+    })(1)
 </script>
 </body>
 </html>

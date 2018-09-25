@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Roboto, San Francisco, "Helvetica Neue", Helvetica, Arial, PingFangSC-Light, "Hiragina Sans GB", "WenQuanYi Micro Hei", 'microsoft yahei ui', 'microsoft yahei', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .pg-header {
+            height: 50px;
+            background: #262626;
+            width: 100%;
+            min-width: 900px;
+            color: white;
+            line-height: 50px;
+        }
+
+        .pg-header .logo {
+            width: 183px;
+            text-align: center;
+        }
+
+        .pg-header .nav_list {
+            text-align: center;
+        }
+
+        .pg-header .nav_list .user {
+            width: 150px;
+            position: relative;
+        }
+
+        .pg-header .nav_list .user:hover {
+            background: black;
+            color: #00F5FF;
+        }
+
+        .pg-header .nav_list .user:hover .content_list {
+            display: block;
+        }
+
+        .pg-header .nav_list .content_list {
+            width: 150px;
+            background: black;
+            position: absolute;
+            z-index: 2;
+            display: none;
+        }
+
+        .pg-header .nav_list .content_list ul li {
+            border-bottom: 1px solid black;
+        }
+
+        .pg-header .nav_list .content_list ul li:hover {
+            color: #00F5FF;
+        }
+
+        .pg-content .menu {
+            font-size: 12px;
+            width: 185px;
+            min-width: 185px;
+            position: fixed;
+            top: 50px;
+            bottom: 0;
+            background: #333;
+            overflow: auto;
+            color: white;
+        }
+
+        .pg-content .menu .aside-headline {
+            width: 160px;
+            height: 50px;
+            line-height: 50px;
+            padding-left:20px;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .pg-content .menu .aside-list {
+            margin-top: 50px;
+        }
+
+        .pg-content .menu .aside-list span {
+            margin-left: 20px;
+        }
+        .pg-content .menu .aside-list li a{
+            display: block;
+            line-height: 25px;
+            padding: 5px 0;
+            font-size: 13px;
+            color: #bbb;
+            position: relative;
+        }
+        .pg-content .menu .aside-list li a:hover {
+            background: #000;
+        }
+        .pg-content .menu .aside-list li .font-icon{
+            position: absolute;
+            right: 20%;
+            bottom: 43%;
+        }
+        .pg-content .menu .aside-list .aside-sublist li a{
+            display: block;
+            height: 15px;
+            line-height: 15px;
+            padding: 7px 0 7px 33px;
+            font-size: 13px;
+            color: #bbb;
+        }
+
+        .pg-content .content {
+            min-width: 700px;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            bottom: 0;
+            left: 185px;
+            background: #f2f2f2 !important;
+            overflow: auto;
+        }
+
+    </style>
+</head>
+<body>
+<div class="pg-header">
+    <div class="logo left">
+        <span>test平台</span>
+    </div>
+    <div class="nav_list right">
+        <div class="user left">
+            <div class="name">
+                11772848156
+            </div>
+            <div class="content_list">
+                <ul>
+                    <a href="#">
+                        <li>账户信息</li>
+                    </a>
+                    <a href="#">
+                        <li>安全信息</li>
+                    </a>
+                    <a href="#">
+                        <li>映射端口</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="account left"></div>
+        <div class="tools left">
+            <div class="name">tools</div>
+        </div>
+    </div>
+
+</div>
+<div class="pg-content">
+    <div class="menu">
+        <div class="aside-headline"><span>访问管理</span></div>
+        <ul class="aside-list">
+            <li><a href="#"><span>概览</span></a></li>
+            <li><a href="#"><span>用户管理</span></a></li>
+            <li><a href="#"><span>策略管理</span></a></li>
+            <li><a href="#"><span>角色管理</span></a></li>
+            <li>
+                <a id="i1"  href="#" onclick="Showmenu(nid='i1')">
+                    <span class="menu_name">联合账号</span>
+                    <i class="fa fa-sort-desc fa-lg font-icon "></i>
+                </a>
+                <ul class="aside-sublist hide">
+                    <li><a href="#"><span>test</span></a></li>
+                    <li><a href="#"><span>企业微信</span></a></li>
+                </ul>
+            </li>
+            <li>
+                <a id="i2"  href="#" onclick="Showmenu(nid='i2')">
+                    <span>云API密钥</span>
+                    <i class="fa fa-sort-desc fa-lg font-icon "></i>
+                </a>
+                <ul class="aside-sublist hide" >
+                    <li><a href="#"><span>API密钥管理</span></a></li>
+                    <li><a href="#"><span>项目密钥管理</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+    </div>
+</div>
+<div class="pg-footer">
+
+</div>
+<script>
+    function Showmenu(nid) {
+        var self_tag=document.getElementById(nid).nextElementSibling;
+        var status=false;
+        if ('hide'  in self_tag.classList) {
+            status=false;
+        }
+        else{
+            status=true;
+        }
+        var submenu_list=document.getElementsByClassName('aside-sublist');
+        for (var i in submenu_list){
+            console.log(submenu_list[i]);
+            if ('hide' in submenu_list[i].classList) {
+                var test=0
+            }else{
+                submenu_list[i].classList.add('hide')
+            }
+        }
+        if (status){
+            self_tag.classList.remove('hide')
+        }
+    }
+</script>
+</body>
+</html>

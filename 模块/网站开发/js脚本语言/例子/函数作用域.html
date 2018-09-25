@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<script>
+    var name='xiaoming';
+    function func1() {
+        var name='test';
+        function f1() {
+            console.log(name)
+        }
+        return f1;
+    }
+    var f1=func1();
+    f1(); //返回为test
+
+
+
+    //函数会提前声明变量
+    function f2() {
+        console.log(name); // 返回undefined
+        var name='test';
+    }
+    f2();
+    function f3(){
+        // console.log(a) //会报错未定义变量
+    }
+    f3()
+
+//流程 先声明所有的变量,生成作用于链查找循序已经在运行是定死 找最近的变量
+
+</script>
+</body>
+</html>

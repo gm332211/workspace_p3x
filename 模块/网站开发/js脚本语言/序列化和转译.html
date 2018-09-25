@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<script>
+    //----序列化
+    a=[11,22,33];
+    new_a=JSON.stringify(a); //转化成字符串
+    console.log(new_a);
+    b=JSON.parse(new_a); //转化成对象
+    console.log(b);
+    //----转译
+    url='http://www.baidu.com?name=小明';
+    console.log(url);
+    new_url=encodeURI(url); //编译url
+    console.log(new_url);
+    url_b=decodeURI(new_url); //解编url
+    console.log(url_b);
+    new_url=encodeURIComponent(url); //编译全部url
+    console.log(new_url);
+    url_b=decodeURIComponent(new_url); //解编全部url
+    console.log(url_b);
+</script>
+</body>
+</html>
