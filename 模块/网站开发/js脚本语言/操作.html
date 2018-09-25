@@ -21,6 +21,38 @@
     // 获取选择的值true or false
     obj.checked=true;
 
+    //---文本内容操作
+    var tag=document.getElementById('i1');
+    //获取标签内部内容
+    tag.innerText;
+    //获取整个html标签+内容
+    tag.innerHTML;
+    //获取值,设置值, input select textarea
+    tag.value='1';
+    // select下标获取,设置
+    tag.selectedIndex=1;
+
+    //---样式操作
+    //获取所有的class,设置
+    tag.className;
+    //获取所有的class列表
+    tag.classList;
+    //添加样式,移除样式
+    tag.classList.add();
+    tag.classList.remove();
+    //设置单个样式
+    tag.style.backgroundColor='red';
+
+    //---标签操作
+    //添加一个标签
+    var input_str="<p><input type='text'></p>>";
+    tag.insertAdjacentHTML('beforeEnd',input_str);
+    //创建一个标签
+    var p_tag=document.createElement('p');
+    var input_tag=document.createElement('input');
+    //添加子标签
+    p.appendChild(input_tag);
+    tag.appendChild(p);
 </script>
 </body>
 </html>

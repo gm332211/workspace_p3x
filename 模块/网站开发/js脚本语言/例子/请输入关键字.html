@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<input onfocus="Focus();" onblur="Blur();" type="text" id="i1" value="请输入关键字">
+<input type="text" placeholder="请输入关键字">
+<script>
+    function Focus() {
+        var tag=document.getElementById('i1');
+        if (tag.value=='请输入关键字') {
+            tag.value='';
+        }
+    }
+        function Blur() {
+        var tag=document.getElementById('i1');
+        if (tag.value.length==0) {
+            tag.value='请输入关键字';
+        }
+    }
+    //onfocus 获取光标
+    //onblur 移除光标
+</script>
+</body>
+</html>
