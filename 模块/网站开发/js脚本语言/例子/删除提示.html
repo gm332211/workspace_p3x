@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div id="i1"></div>
+    <div onclick="f()">删除<div/>
+    <script>
+        function f() {
+        var info_tag=document.getElementById('i1');
+        info_tag.innerText='已删除';
+        setTimeout(function () {
+            info_tag.innerText='';
+        },3000);
+        }
+
+    </script>
+</body>
+</html>

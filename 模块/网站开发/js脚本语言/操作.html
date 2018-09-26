@@ -46,13 +46,35 @@
     //---标签操作
     //添加一个标签
     var input_str="<p><input type='text'></p>>";
+    //beforeBegin,afterBegin,beforeend,afterend, 插入字符串
     tag.insertAdjacentHTML('beforeEnd',input_str);
     //创建一个标签
     var p_tag=document.createElement('p');
     var input_tag=document.createElement('input');
-    //添加子标签
+    //添加子标签 插入为对象
     p.appendChild(input_tag);
     tag.appendChild(p);
+
+    //---其他操作
+    //表单提交
+    document.getElementById('form').submit();
+    //弹窗
+    alert(123);
+    //v的值是true or false
+    var v=confirm('确认删除吗?');
+    //页面跳转 or 刷新
+    location.href='http://www.baidu.com';
+    location.reload();
+    //定时器创建和清除
+    var o1=setInterval(function () {
+        console.log(123);
+    },5000);
+    clearInterval(o1);
+    //超时器创建和删除
+    var o2=setTimeout(function () {
+        console.log(123);
+    },5000);
+    clearTimeout(o2)
 </script>
 </body>
 </html>
