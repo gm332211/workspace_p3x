@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        table td{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<table id="t1" border='1'>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+<script>
+    var myTag=document.getElementsByTagName('tr');
+    for (i = 0; i < myTag.length;i++){
+        myTag[i].onmouseover=function () {
+            this.style.backgroundColor='red';
+        };
+        myTag[i].onmouseout=function () {
+        this.style.backgroundColor='';
+        }
+    }
+    var myTdTag=document.getElementsByTagName('td');
+        for (i = 0; i < myTdTag.length;i++){
+            myTdTag[i].onclick=function () {
+                if (this.style.backgroundColor=='black'){
+                    this.style.backgroundColor='';
+                    this.style.color='';
+                } else{
+                    this.style.backgroundColor='black';
+                    this.style.color='white';
+                }
+
+            };
+        }
+
+</script>
+</body>
+</html>

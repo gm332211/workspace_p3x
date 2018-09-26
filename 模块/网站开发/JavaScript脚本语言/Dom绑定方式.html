@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<!--dom0绑定方式-->
+<div id="i1" onclick="f1()">点我</div>
+<script>
+    //Dom1绑定方式
+    var tag=document.getElementById('i1');
+    tag.onclick=function () {
+        console.log(this)
+    };
+    //Dom2绑定方式 false捕捉,true冒泡
+    tag.addEventListener('click',function (ev) { console.log(this) },false);
+
+    //事件
+    //图像加载中断
+    tag.onabort;
+    //元素失去焦点
+    tag.onblur;
+    //域内容被改变
+    tag.onchange;
+    //当用户点击
+    tag.onclick;
+    //图像加载错误
+    tag.onerror;
+    //元素获得焦点
+    tag.onfocus;
+    //某个键盘按键按下
+    tag.onkeydown;
+    //某个键盘按键按下并松开
+    tag.onkeypress;
+    //某个键盘按键松开
+    tag.onkeyup;
+    //一张页面或者图片加载完成
+    tag.onload;
+    //鼠标按下
+    tag.onmousedown;
+    //鼠标被移动
+    tag.onmousemove;
+    //鼠标从某个元素移开
+    tag.onmouseout;
+    //鼠标移动到元素上
+    tag.onmouseover;
+    //鼠标按键被松开
+    tag.onmouseup;
+    //重置按钮被点击
+    tag.onreset;
+    //窗口或框架被重新调整
+    tag.onresize;
+    //文本被选中
+    tag.onselect;
+    //确认按钮被点击
+    tag.onsubmit;
+    //用户退出页面
+    tag.onunload;
+
+</script>
+</body>
+</html>
