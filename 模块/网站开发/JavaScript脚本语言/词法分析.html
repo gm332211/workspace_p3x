@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<script>
+    function f1(age) {
+        console.log(age);
+        var age='1';
+        console.log(age);
+        function age() {}
+        console.log(age)
+    }
+    f1(3)
+    //词法分析步骤
+    //形式参数传递 age=3
+    //局部变量声明 age=undefind
+    //函数声明 age=function
+    //console.log(function)
+    //age=1
+    //console.log(1)
+    //console.log(1)
+</script>
+</body>
+</html>
