@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hide{
+            display: none;
+        }
+        .item{
+            width: 180px;
+        }
+        .header{
+            height: 35px;
+            background: pink;
+            line-height: 35px;
+        }
+        .header:hover,.content:hover{
+            background: #000;
+            color: white;
+        }
+        .header span{
+            margin-left: 20px;
+        }
+        .content{
+            height: 25px;
+            background: burlywood;
+            line-height: 25px;
+        }
+        .content span{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="pg-header"></div>
+<div class="pg-main">
+    <div class="pg-left">
+        <div class="item">
+            <div class="header"><span>菜单一</span></div>
+            <div class="content hide"><span>内容一</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单二</span></div>
+            <div class="content hide"><span>内容二</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单三</span></div>
+            <div class="content hide"><span>内容三</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单四</span></div>
+            <div class="content hide"><span>内容四</span></div>
+        </div>
+    </div>
+</div>
+<div class="pg-footer"></div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $('.pg-left .header').click(function () {
+        $(this).next().toggleClass('hide').parent().siblings().find('.content').addClass('hide');
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div id="i1"></div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    //jquery 查找对象
+    var tag=$('#i1');
+    //Dom 查找对象
+    var js_tag=document.getElementById('i1');
+    //js转换jq
+    console.log(js_tag);
+    console.log($(js_tag));
+    //jq转换js
+    console.log(tag);
+    console.log(tag[0]);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .hide {
+            display: none;
+        }
+        .addmodel {
+    position: fixed;
+    width: 500px;
+    height: 200px;
+    background: #eeeeee;
+    z-index: 3;
+    top: 30%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -100px;
+}
+        .showmodel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+            opacity: 0.6;
+            z-index: 2;
+        }
+
+        .pg-header {
+            width: 100%;
+            height: 50px;
+            background: #000;
+        }
+
+        .pg-left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            margin-top: 50px;
+            overflow: auto;
+            background: pink;
+            width: 180px;
+            min-width: 180px;
+            opacity: 0.7;
+        }
+
+        .pg-left .item {
+            width: 180px;
+        }
+
+        .pg-left .header {
+            height: 35px;
+            background: pink;
+            line-height: 35px;
+        }
+
+        .pg-left  .header:hover, .pg-left .content:hover {
+            background: #000;
+            color: white;
+        }
+
+        .pg-left  .header span {
+            margin-left: 20px;
+        }
+
+        .pg-left .content {
+            height: 25px;
+            background: burlywood;
+            line-height: 25px;
+        }
+
+        .pg-left .content span {
+            margin-left: 50px;
+        }
+
+        .pg-content {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin-top: 50px;
+            margin-left: 180px;
+            overflow: auto;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="addmodel hide">
+    <div class="add-content">
+        <input name="hostname" type="text"><input name="port"  type="text">
+        <input class="cancelmodel" type="button" value="取消">
+    </div>
+</div>
+<div class="showmodel hide"></div>
+<div class="pg-header"></div>
+<div class="pg-main">
+    <div class="pg-left">
+        <div class="item">
+            <div class="header"><span>菜单一</span></div>
+            <div class="content hide"><span>内容一</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单二</span></div>
+            <div class="content hide"><span>内容二</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单三</span></div>
+            <div class="content hide"><span>内容三</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单四</span></div>
+            <div class="content hide"><span>内容四</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单四</span></div>
+            <div class="content hide"><span>内容四</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单四</span></div>
+            <div class="content hide"><span>内容四</span></div>
+        </div>
+        <div class="item">
+            <div class="header"><span>菜单四</span></div>
+            <div class="content hide"><span>内容四</span></div>
+        </div>
+
+    </div>
+    <div class="pg-content">
+        <div class="handle">
+            <span id="add-host">添加</span>
+            <span id="del-host">删除</span>
+            <span id="rev-host">反选</span>
+        </div>
+        <div class="table-content">
+            <table>
+                <thead>
+                <tr>
+                    <th><input id="table-choice" type="checkbox"></th>
+                    <th>主机</th>
+                    <th>PORT</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class='self-choice'><input type="checkbox"></td>
+                    <td>1.1.1.1</td>
+                    <td>80</td>
+                    <td><span class="table-edit">编辑</span> |<span>删除</span></td>
+                </tr>
+                <tr>
+                    <td class='self-choice'><input type="checkbox"></td>
+                    <td>1.1.1.1</td>
+                    <td>80</td>
+                    <td><span class="table-edit">编辑</span> |<span>删除</span></td>
+                </tr>
+                <tr>
+                    <td class='self-choice'><input type="checkbox"></td>
+                    <td>1.1.1.1</td>
+                    <td>80</td>
+                    <td><span class="table-edit">编辑</span> |<span>删除</span></td>
+                </tr>
+                <tr>
+                    <td class='self-choice'><input type="checkbox"></td>
+                    <td>1.1.1.2</td>
+                    <td>80</td>
+                    <td><span class="table-edit">编辑</span> |<span>删除</span></td>
+                </tr>
+                <tr>
+                    <td class='self-choice'><input type="checkbox"></td>
+                    <td>1.1.1.3</td>
+                    <td>80</td>
+                    <td><span class="table-edit">编辑</span> |<span>删除</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="pg-footer"></div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    //左侧收缩菜单
+    $('.pg-left .header').click(function () {
+        $(this).next().toggleClass('hide').parent().siblings().find('.content').addClass('hide');
+    });
+    //添加按钮
+    $('#add-host').click(function () {
+        $('.addmodel :text').val('');
+        $('.addmodel,.showmodel').removeClass('hide');
+        //取消添加按钮
+    });
+    $('.cancelmodel').click(function () {
+        $('.addmodel,.showmodel').addClass('hide');
+    });
+    //全选+取消
+    $('#table-choice').click(function () {
+        var tag_checkbox = $('.table-content :checkbox');
+        tag_checkbox.prop('checked', $(this).prop('checked'));
+    });
+    //反选
+    $('#rev-host').click(function () {
+        var tag_checkbox = $('.table-content tbody :checkbox');
+        tag_checkbox.each(function () {
+            var flag = $(this).prop('checked') ? false : true;
+            $(this).prop('checked', flag);
+        });
+    });
+    //编辑
+    $('.table-edit').click(function () {
+        $('.addmodel,.showmodel').removeClass('hide');
+        var tds=$(this).parent().prevUntil('.self-choice');
+        $('.addmodel input[name="hostname"]').val($(tds[1]).text());
+        $('.addmodel input[name="port"]').val($(tds[0]).text());
+    })
+</script>
+</body>
+</html>

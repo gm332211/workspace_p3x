@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<input id="checkall" type="button" value="全选"><input id="cancel" type="button" value="取消"><input id="reverse"
+                                                                                                 type="button"
+                                                                                                 value="反选">
+<table id="t1">
+    <thead>
+    <tr>
+        <th>选择</th>
+        <th>IP</th>
+        <th>PORT</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>1.1.1.1</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>1.1.1.1</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>1.1.1.1</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>1.1.1.1</td>
+        <td>80</td>
+    </tr>
+    </tbody>
+</table>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $('#checkall').click(
+        function () {
+            $('#t1 :checkbox').prop('checked', true);
+        }
+    );
+    $('#cancel').click(
+        function () {
+            $('#t1 :checkbox').prop('checked', false);
+        }
+    );
+    $('#reverse').click(
+        function () {
+            $('#t1 :checkbox').each(function () {
+                var v=$(this).prop('checked')?false:true;
+                $(this).prop('checked',v)
+                //javascript实现
+                // var v=this.checked?false:true;
+                // this.checked=v;
+            })
+        }
+    );
+
+</script>
+</body>
+</html>

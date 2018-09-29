@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div id="i1">abc</div>
+<input id="i2" type="text" value="aaa">
+<script src="jquery-1.12.4.js"></script>
+<script>
+    //查找文本 修改文本
+    $(this).text('aaa');
+    //查找html 修改html
+    $(this).html('<p>aaa</p>');
+    //input标签文本查找,修改
+    $(this).val('bbb');
+    //在标签内部添加标签(最后)
+    $(this).append();
+    //(开始)
+    $(this).prepend();
+    //在标签外部(最后)
+    $(this).before();
+    //(开始)
+    $(this).after();
+    //移除标签
+    $(this).remove();
+    //设置标签值为空
+    $(this).empty();
+    //克隆本标签
+    $(this).clone()
+</script>
+</body>
+</html>

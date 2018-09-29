@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    //------基本选择器
+    //id选择器
+    $('#i1');
+    //class选择器
+    $('.c1');
+    //标签选择器
+    $('a');
+    //所有选择器
+    $('*');
+    //组合选择器
+    $('#i1,.c1,a');
+
+    //------层级选择器
+    //查找标签下面所有的子集
+    $('#c1>a');
+    //找到c1后面所有的a标签
+    $('#c1+a');
+    //找到和c1同级的a标签
+    $('#c1~a');
+
+        //------筛选器
+    $(this).eq(0); //first last hasClass 是否存在class
+    $(this).find(); //children parent parents(所有的父亲标签) prev next silbings 所有兄弟
+    //nextAll下面所有标签 nextUntil('i1')找到下面截至i1的标签 (prev 存在)parentsUntil
+
+    //------筛选
+    //常用的
+    $('#c1:first'); //第一个
+    $('#c1:last'); //最后一个
+    $('#c1:even'); //偶数
+    $('#c1:odd'); //奇数
+    $('#c1:eq(1)'); //下标第二个元素
+    $('#c1:header');
+    //不常用的
+    $('#c1:gt');
+    $('#c1:lang');
+    $('#c1:animated');
+    $('#c1:focus');
+    $('#c1:root');
+    $('#c1:target');
+    $('#c1:lt');
+
+
+    //------属性筛选器
+    //查找属性是type为text的
+    //有(=)相等的 (!=)不相等的 (*=)内部存在的 (^=)所有以什么开头的 ($=)结尾的
+    $("[name='text']"); $("input[type='test']");
+    //多条属性查找
+    $("[name='text'][type='admin']");
+
+    //------选择器子元素
+    //获取子集的第一个元素
+    $("ul li:first-child");
+    //(first-of-type) 找到父元素的长子标签
+    //(last-of-type) 找到父元素的最后一个子标签
+    //(last-child) 最后一个元素
+    //(nth-child(2))根据下标找 从1开始
+    //(nth-last-child(2))倒数找 从1开始
+    //(only-child) 找到只有唯一一个的标签
+    //$("span:nth-of-type(2)"); 所有span兄弟中的第2个
+
+
+    //------表单
+    //找到所有input标签
+    $(':input');
+    //找到所有text的标签 password radio checkbox submit image reset button file
+    $(':text');
+
+    //------表单对象属性
+    //找到带有enabled属性的表单, disabled checked selected
+    $(':enabled');
+    
+    //------循环
+    $(this).each(function () {
+    });
+    
+    //------事件
+    $(this).click(function () {
+    });
+
+    //-----属性获取和设置
+    $(this).prop('checked',true);
+
+
+
+</script>
+</body>
+</html>

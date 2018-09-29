@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .header .submenu{
+            float: left;
+            padding: 2px 5px;
+
+        }
+        .header .active{
+            background: brown;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="menu">
+        <div class="submenu active">菜单一</div>
+        <div class="submenu">菜单二</div>
+        <div class="submenu">菜单三</div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+<div class="content">
+    <div class="subcontent ">内容一</div>
+    <div class="subcontent hide">内容二</div>
+    <div class="subcontent hide">内容三</div>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $('.submenu').click(function () {
+        //点击变换样式
+        $(this).addClass('active').siblings().removeClass('active');
+        //点击变换内容
+        $('.content').children().addClass('hide').eq($(this).index()).removeClass('hide')
+    })
+</script>
+</body>
+</html>

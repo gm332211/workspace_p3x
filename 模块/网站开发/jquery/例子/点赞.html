@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .content .item{
+            padding: 50px 0;
+            padding-left: 50px;
+            border:1px solid black;
+        }
+        .item .praise{
+            width: 40px;
+            background: yellow;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="item">
+        <div class="praise"><span>赞</span></div>
+    </div>
+</div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $('.praise').click(function () {
+        var flag;
+        if ($(this).hasClass('active')){
+            flag='-1';
+            $(this).removeClass('active');
+        } else{
+            flag='+1';
+            $(this).addClass('active');
+        }
+        addPraise(this,flag);
+    });
+    function addPraise(self,flag){
+        var fontSize=15;
+        var top=0;
+        var right=0;
+        var opacity=1;
+        var v=addTag(self);
+        var obj=setInterval(function () {
+            fontSize=fontSize+2;
+            top=top-5;
+            right=right-5;
+            opacity=opacity-0.1;
+            $(v).text(flag);
+            $(v).css('font-size',fontSize+'px');
+            $(v).css('position','absolute');
+            $(v).css('top',top+'px');
+            $(v).css('right',right+'px');
+            $(v).css('opacity',opacity);
+            if (opacity<0){
+                clearTimeout(obj);
+                v.remove();
+            }
+        },100);
+    }
+    function addTag(self) {
+        var v=document.createElement('span');
+        $(self).append(v);
+        return v;
+    }
+
+</script>
+</body>
+</html>
