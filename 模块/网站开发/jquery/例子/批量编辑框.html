@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<style>
+    .hide {
+        display: none;
+    }
+
+    #handle {
+        cursor: pointer;
+    }
+
+    #edit {
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .out-edit {
+        background: #98F5FF;
+    }
+
+    .get-edit {
+        background: blanchedalmond;
+    }
+</style>
+<body>
+<div id="handle">
+    <span id="checkall">全选</span>
+    <span id="reverse">反选</span>
+    <span id="cancle">取消</span>
+    <span id="edit" class="out-edit">进入编辑模式</span>
+</div>
+<table id="t1">
+    <thead>
+    <tr>
+        <th>
+            <span>选择</span>
+        </th>
+        <th>
+            <span>主机名</span>
+        </th>
+        <th>
+            <span>端口</span>
+        </th>
+        <th>
+            <span>状态</span>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td><span>192.168.1.10</span></td>
+        <td><span>8080</span></td>
+        <td><span status="2">下线</span></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td><span>192.168.1.10</span></td>
+        <td><span>8080</span></td>
+        <td><span status="1">在线</span></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td><span>192.168.1.10</span></td>
+        <td><span>8080</span></td>
+        <td><span status="1">在线</span></td>
+    </tr>
+
+    </tbody>
+</table>
+<div id="statusSelect" class="hide">
+    <select name="" id="status">
+        <option value="1">在线</option>
+        <option value="2">下线</option>
+    </select>
+    <span id="test"></span>
+</div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    //绑定编辑按钮事件
+    $('#handle').delegate('#edit', 'click', function () {
+        var status = false;
+        if ($(this).hasClass('out-edit')) {
+            status = true;
+        }
+        Edit(status);
+    });
+    //绑定选择按钮(编辑)
+    $('#t1 :checkbox').click(function () {
+        if ($('#edit').hasClass('get-edit')) {
+            if ($(this).prop('checked')) {
+                getEdit(this);
+            }
+            else {
+                outEdit(this);
+            }
+        }
+    });
+
+    //全选
+    $('#checkall').click(function () {
+        $('#t1 :checkbox').prop('checked',true);
+        if ($('#edit').hasClass('get-edit')){
+            $('#t1 :checkbox').each(function () {
+                getEdit(this);
+            })
+        }
+    });
+
+    // 取消
+    $('#cancle').click(function () {
+        $('#t1 :checkbox').prop('checked',false);
+        if ($('#edit').hasClass('get-edit')){
+            $('#t1 :checkbox').each(function () {
+                outEdit(this);
+            })
+        }
+    });
+
+    //反选
+    $('#reverse').click(function () {
+
+        $('#t1 :checkbox').each(function () {
+            var checked=$(this).prop('checked');
+            if ($('#edit').hasClass('get-edit')){
+                if (checked){
+                    outEdit(this);
+                }
+                else{
+                    getEdit(this);
+                }
+            }
+            if (checked){
+                checked=false;
+            }
+            else{
+                checked=true;
+            }
+            $(this).prop('checked',checked);
+        });
+    });
+
+    function Edit(status) {
+        var self = $('#edit');
+        //编辑模式
+        if (status) {
+            self.addClass('get-edit');
+            self.removeClass('out-edit');
+            self.text('退出编辑模式');
+        }
+        //进入编辑模式
+        else {
+            self.addClass('out-edit');
+            self.removeClass('get-edit');
+            self.text('进入编辑模式');
+        }
+        $('#t1').find(':checkbox').each(function () {
+            if ($(this).prop('checked')) {
+                if (status) {
+                    getEdit(this);
+                } else {
+                    outEdit(this);
+                }
+            }
+        })
+    }
+
+    //进入编辑
+    function getEdit(self) {
+        $(self).parent().parent().find('span').each(function () {
+            var status = $(this).attr('status');
+            //select编辑
+            if (status) {
+                var tag = $('#statusSelect').find('#status').clone();
+                $(tag).find("option[value='" + status + "']").prop('selected', true);
+            }
+            //input的编辑
+            else {
+                var text = $(this).text();
+                var tag = document.createElement('input');
+                $(tag).attr('type', 'text');
+                $(tag).val(text);
+            }
+            $(this).after(tag);
+            $(this).remove();
+        });
+    }
+
+    //退出编辑
+    function outEdit(self) {
+        //退出input编辑
+        $(self).parent().parent().find(':text').each(function () {
+            var text = $(this).val();
+            var tag = document.createElement('span');
+            $(tag).text(text);
+            $(this).after(tag);
+            $(this).remove()
+        });
+        //退出select编辑
+        $(self).parent().parent().find('#status').each(function () {
+            console.log(this);
+            var status = $(this).val();
+            var text = $(this).find('[value="' + status + '"]').text();
+            var tag = document.createElement('span');
+            $(tag).attr('status', status);
+            $(tag).text(text);
+            $(this).after(tag);
+            $(this).remove();
+        })
+    }
+
+
+</script>
+</body>
+</html>

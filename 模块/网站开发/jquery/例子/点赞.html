@@ -55,7 +55,7 @@
             $(v).css('opacity',opacity);
             if (opacity<0){
                 clearTimeout(obj);
-                v.remove();
+                $(v).remove();
             }
         },100);
     }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form id="f1" action="点赞.html" method="post">
+    <p><input type="text"></p>
+    <p><input type="text"></p>
+    <p><input type="text"></p>
+    <p><input type="text"></p>
+    <p><input type="password"></p>
+    <p><input id="s1" type="submit"></p>
+</form>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    //当页面框架加载完毕执行
+    $(function () {
+        $.Login();
+        $('#s1').test();
+    });
+    //自执行函数封装模块使用的
+    (function ($) {
+        //封装jquery内部函数
+        $.extend(
+            {
+                'Login':function () {
+                        $('#s1').click(function () {
+                        $('.error').remove();
+                        var flag=true;
+                        $('#f1').find(':text,:password').each(function () {
+                            var v=$(this).val();
+                            if(v.length<=0){
+                                var tag=document.createElement('span');
+                                $(tag).text('必填选项');
+                                $(tag).addClass('error');
+                                $(this).after(tag);
+                                flag=false;
+                            }
+                        });
+                        return flag;
+                    });
+                }
+            }
+        );
+        //封装对象内部函数
+        $.fn.extend({
+            'test':function () {
+                console.log('test');
+            }
+        })
+    })(jQuery); //外部调用传入jQuery对象 src="test.js"
+
+</script>
+
+</body>
+</html>

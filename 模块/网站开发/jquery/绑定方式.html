@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div id="i1">
+    <a href=""></a>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    //普通绑定
+    $('#i1').click(function () {
+    });
+    $('#i1').on('click',function () {
+    });
+    $('#i1').bind('click',function () {
+    });
+    //委托绑定,添加新的标签可以绑定上事件
+    $('#i1').delegate('a','click',function () {
+    });
+    $(this).unclick(function () {
+    })
+    $(this).off('click',function () {
+    })
+    $(this).unbind('click',function () {
+    })
+    $(this).undelegate('a','click',function () {
+    })
+</script>
+</body>
+</html>

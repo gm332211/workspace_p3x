@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        #i1{
+            width: 500px;
+            height: 500px;
+            background: #000;
+            position: relative;
+            margin: 50px;
+            padding: 150px;
+            border: 1px solid red;
+        }
+        #i2{
+            width: 50px;
+            height: 50px;
+            background: burlywood;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="i1">
+    <div id="i2"></div>
+</div>
+
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    //获取相对父元素的位置
+    var data=$('#i2').position();
+    console.log(data);
+    var height=$('#i1').height();
+    console.log(height);
+    //不计算内部边框,计算内部边距
+    var innerheight=$('#i1').innerHeight();
+    console.log(innerheight);
+    //计算内部边框+true计算外部边距
+    var outerheight=$('#i1').outerHeight(true);
+    console.log(outerheight);
+    //位置
+    //获取整个文档的位置,设置 (scrollLeft),(offset)获取当前标签在整个文档中的位置
+    $(window).scrollTop();
+    $(window).scrollTop(0);
+
+</script>
+</html>
