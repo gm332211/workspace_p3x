@@ -1,0 +1,61 @@
+--创建django
+    创建django 项目
+    python manage.py startproject mydjango
+    创建django app
+    python manage.py startapp myapp
+    生成数据库日志
+    python manage.py makemigrations
+    同步数据库
+    python manage.py migrate
+--配置django (setting.py 文件
+    1.配置templates路径
+    'DIRS': [os.path.join(BASE_DIR, 'templates')]
+    TEMPLATES = [
+    {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [os.path.join(BASE_DIR, 'templates')]
+            ,
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]
+    2.配置静态文件目录
+    STATICFILES_DIRS=(
+        os.path.join(BASE_DIR,'static'),
+    )
+    3.注释csrf配置
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+
+    4.配置路由
+    url.py
+        规则-->函数
+        url(r'^login',views.login),
+    5.函数(控制器)
+    def login(request):
+        return HttpResponse('字符串')
+        return render(request,'login.html',{'user_data':user_data})
+        return redirect('https://github.com/')
+    6.模板
+    插入数据
+    <div>{{user_data}}</div>
+    列表
+    <div>{{user_data.0}}</div>
+    字典
+    <div>{{user_data.name}}</div>
+    循环
+    {% for user in user_data %}
+        {{user.name}
+    {% endfor %}
+    判断
+    {% if name=='xiaoming'%}
+        {{user_data.0}}
+    {% else%}
+        {{user_data.1}}
+    {% endif%}

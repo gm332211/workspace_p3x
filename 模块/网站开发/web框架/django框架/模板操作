@@ -1,0 +1,21 @@
+插入数据
+<div>{{user_data}}</div>
+列表
+<div>{{user_list.0}}</div>
+字典
+<div>{{user_dict.name}}</div>
+循环
+列表循环
+{% for user in user_list %}
+    {{user.name}
+{% endfor %}
+字典循环
+{% for key in user_dict.keys %}
+{% for value in user_dict.values %}
+{% for key,value in user_dict.items %}
+判断
+{% if name=='xiaoming'%}
+    {{user_data.0}}
+{% else%}
+    {{user_data.1}}
+{% endif%}
