@@ -1,0 +1,9 @@
+----修改setting文件(指定要生成数据库app)
+INSTALLED_APPS = ['cmdb',]
+----在models文件中创建类
+继承models.Model
+from django.db import models
+class UserInfo(models.Model):
+    name=models.CharField(max_length=32)
+    password=models.CharField(max_length=32)
+---
