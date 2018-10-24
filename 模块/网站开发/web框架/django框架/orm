@@ -34,9 +34,10 @@ UserInfo.objects.filter(条件).update(name='test')
 UserInfo.objects.filter(条件).first()update(name='test') 单个对象
 ----数据库类型
 字符串 CharField
-数字
-时间
+数字 IntegerField
+时间 DateTimeField
 二进制
+外键 ForeignKey
 ----数据类型参数
 null=true --->db是否为空
 default --->默认值
@@ -57,3 +58,4 @@ editable ----> admin input是否可以编辑
 error_messages ----> input错误信息
 help_text ----> input提示框
 validators ----> form自定义错误信息
+
