@@ -73,3 +73,10 @@ filter(id_lte=1,name='xiaoming')
 filter_dict={'id_gt':1,'name':'xiaoming'}
 可传入筛选字典
 filter(**filter_dict)
+
+#获取的是对象
+UserInfo.objects.filter(条件).all()
+#获取的是字典
+UserInfo.objects.filter(条件).all().values('id','name')
+#获取的是元组
+UserInfo.objects.filter(条件).all().value_list('id','name')
