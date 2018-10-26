@@ -59,3 +59,17 @@ error_messages ----> input错误信息
 help_text ----> input提示框
 validators ----> form自定义错误信息
 
+----数据库筛选条件
+id大于1的
+filter(id_gt=1)
+id大于等于1的
+filter(id_gt3=1)
+id小于1的
+filter(id_lt=1)
+id小于等于1的
+filter(id_lte=1)
+id小于等于1和名称为小明的
+filter(id_lte=1,name='xiaoming')
+filter_dict={'id_gt':1,'name':'xiaoming'}
+可传入筛选字典
+filter(**filter_dict)

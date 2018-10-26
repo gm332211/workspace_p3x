@@ -29,3 +29,6 @@ username=request.POST.get('username')
 user_list=request.POST.getlist('users')
 获取文件对象
 file_obj=request.POST.File.get('file_name')
+file_obj.name
+file_obj.size
+file_obj.chunks
