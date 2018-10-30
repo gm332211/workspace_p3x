@@ -80,3 +80,5 @@ UserInfo.objects.filter(条件).all()
 UserInfo.objects.filter(条件).all().values('id','name')
 #获取的是元组
 UserInfo.objects.filter(条件).all().value_list('id','name')
+双下划线跨表查询
+UserInfo.objects.filter(条件).all().value_list('id','group__name')
