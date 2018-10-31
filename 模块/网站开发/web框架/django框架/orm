@@ -82,3 +82,37 @@ UserInfo.objects.filter(条件).all().values('id','name')
 UserInfo.objects.filter(条件).all().value_list('id','name')
 双下划线跨表查询
 UserInfo.objects.filter(条件).all().value_list('id','group__name')
+
+----多对多(表结构)
+第一种方式
+    class Host(models.Model):
+        name=models.CharField(max_length=32)
+    class App(models.Model):
+        name=models.CharField(max_length=32)
+    class HostToApp(models.Model):
+        hobj=models.ForeignKey(to='Host',to_field='id')
+        aobj=models.ForeignKey(to='App',to_field='id')
+第二种方式
+    class Host(models.Model):
+        name=models.CharField(max_length=32)
+    class App(models.Model):
+        name=models.CharField(max_length=32)
+        r=models.ManyToManyField('Host')
+----多对多(操作)
+obj=Models.App.objects.filter(id='1').first()
+#添加多对多
+obj.r.add(1)
+obj.r.add(1,2,3)
+obj.r.add(*[1,2,3])
+#移除一个对象(参数同上一样)
+obj.r.remove(1)
+#删除全部多对多
+obj.m.clear()
+#重新设置多对多(参数同上)
+obj.r.set(1)
+obj.r.set([1,2,3])
+#显示所有
+obj.r.all()
+#筛选
+obj.r.filter(name='abc')
+

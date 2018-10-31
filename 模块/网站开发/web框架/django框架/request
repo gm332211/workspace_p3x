@@ -1,0 +1,5 @@
+request.environ 获取request内部数据
+request.POST post提交的数据
+request.GET  get提交的数据
+request.FILES 提交的文件数据
+request.COOKIES

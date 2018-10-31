@@ -20,3 +20,11 @@ url=reverse('index',args=(1,2),kwargs={'nid':'1','uid':'2'})
 -----路由的分发
 from django.conf.urls import include
 url(r'^cmdb/',include('cmdb.urls')),
+-----命名空间(当有两个想同的include,不同的app)
+from django.conf.urls import include
+url(r'^cmdb/',include('cmdb.urls'),namespace='cmdb'),
+url(r'^app/',include('cmdb.urls'),namespace='app'),
+views中使用反射
+reverse('cmdb:index')
+模板中的使用
+{% url 'cmdb:index' %}

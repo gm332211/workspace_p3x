@@ -32,3 +32,26 @@
 <td>{{ forloop.laster }}</td>
 父类循环的计数
 <td>{{ forloop.parentloop.first }}</td>
+--------模板继承
+声明模板(声明继承那个模板)
+{% extends 'index.html' %}
+替换模板块
+{% block tittle %}{% endblock %}
+{% block css %}{% endblock %}
+{% block main %}{% endblock %}
+{% block js %}{% endblock %}
+{% block css %}<style></style>{% endblock %}
+引入模板
+{% include 'tag.html' %}
+--------自定义模板函数
+在app目录下创建templatetags
+在templatetags下创建一个工具py
+创建函数
+    from django import template
+    register=template.Library()
+    @register.simple_tag
+    def test(a,b):
+        return a*b
+模板中使用函数
+{% load 'tools'}
+{% test 1 2 %}
