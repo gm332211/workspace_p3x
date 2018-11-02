@@ -1,0 +1,25 @@
+-------创建验证登入装饰器
+def auth(func):
+    def inner(request,*args,**kwargs):
+        user=request.COOKIES.get('username')
+        if not user:
+            url=reverse('login')
+            return redirect(url)
+        return func(request,*args,**kwargs)
+    return inner
+-------FBV使用装饰器
+@auth
+def index(request):
+    return render(request,'index.html')
+-------CBV使用装饰器
+from django.utils.decorators import method_decorator
+@method_decorator(auth,'dipatch') #所有提交方式验证
+class Home(View):
+    @method_decorator(auth)  #所有提交方式验证
+    def dispatch(self, request, *args, **kwargs):
+        return super(Home,self).dispatch(request,*args,**kwargs)
+    @method_decorator(auth) #单个验证
+    def get(self,request):
+        return HttpResponse('this is get method')
+    def post(self,request):
+        return HttpResponse('this is post method')

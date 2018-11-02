@@ -8,7 +8,7 @@ class Home(View):
     #反射方法基类
     def dispatch(self, request, *args, **kwargs):
         #初始化函数
-        super(Home,self).dispatch(request,*args,**kwargs)
+        return super(Home,self).dispatch(request,*args,**kwargs)
 
     def get(self,request):
         return HttpResponse('this is get method')
