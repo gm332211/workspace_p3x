@@ -1,0 +1,60 @@
+from django.utils.safestring import mark_safe
+class Pag():
+    def __init__(self,data_len,current_pag,set_num,pag_num):
+        self.data_len=data_len
+        self.set_num = set_num
+        self.pag_num = pag_num
+        self.current_pag=current_pag
+    @property
+    def start(self):
+        self.v_current_pag()
+        return (self.current_pag-1)*self.set_num
+    @property
+    def end(self):
+        self.v_current_pag()
+        return self.current_pag * self.set_num
+    @property
+    def total_pag(self):
+        v, remainder = divmod(self.data_len, self.set_num)
+        if remainder:
+            v += 1
+        return v
+    def v_current_pag(self):
+        if self.current_pag<1:
+            self.current_pag=1
+        elif self.current_pag>self.total_pag:
+            self.current_pag=self.total_pag
+    def page_str(self,base_url):
+        page_list = []
+        self.v_current_pag()
+        total_page = self.total_pag
+        start_page=self.current_pag - int(self.pag_num / 2)
+        end_page=self.current_pag + int(self.pag_num / 2)
+        if self.current_pag:
+            if start_page <= 1:
+                start_page = 1
+                end_page = self.pag_num - start_page + 1
+                if end_page > total_page:
+                    end_page = total_page
+            elif end_page > total_page:
+                start_page += total_page - end_page
+                end_page = total_page
+        if self.current_pag - 1 < 1:
+            pre = '<a href="#" class="page page_init">上一页</a>'
+        else:
+            pre = '<a href="%s?p=%s" class="page page_init">上一页</a>' % (base_url,self.current_pag - 1)
+        page_list.append(pre)
+        for i in range(start_page, end_page + 1):
+            if self.current_pag == i:
+                page_str = '<a href="%s?p=%s" class="page page-active">%s</a>' % (base_url,i, i)
+            else:
+                page_str = '<a href="%s?p=%s" class="page page_init">%s</a>' % (base_url,i, i)
+            page_list.append(page_str)
+        if self.current_pag + 1 > total_page:
+            next = '<a href="#" class="page page_init">下一页</a>'
+        else:
+            next = '<a href="%s?p=%s" class="page page_init">下一页</a>' % (base_url,self.current_pag + 1)
+        page_list.append(next)
+        page_a = ''.join(page_list)
+        page_a = mark_safe(page_a)
+        return page_a
