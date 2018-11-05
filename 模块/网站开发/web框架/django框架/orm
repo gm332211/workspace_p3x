@@ -1,118 +1,135 @@
 ----修改setting文件(指定要生成数据库app)
-INSTALLED_APPS = ['cmdb',]
-如果使用mysql的话需要在app的__init__文件中加上
-import pymysql
-pymysql.install_as_MySQLdb()
-----在models文件中创建类
-继承models.Model
-from django.db import models
-class UserInfo(models.Model):
-    name=models.CharField(max_length=32)
-    password=models.CharField(max_length=32)
+
+    INSTALLED_APPS = ['cmdb',]
+    如果使用mysql的话需要在app的__init__文件中加上
+    import pymysql
+    pymysql.install_as_MySQLdb()
+    ----在models文件中创建类
+    继承models.Model
+    from django.db import models
+    class UserInfo(models.Model):
+        name=models.CharField(max_length=32)
+        password=models.CharField(max_length=32)
+
 ----生成数据库结构
-python manage.py makemigrations
-python manage.py migrate
-----orm数据库基本操作
-添加
-UserInfo.objects.create(name=username) 最常用的
-UserInfo.objects.create({'name':'xiaoming'})
-UserInfo.objects.create(**dict)
-obj=UserInfo(name=username)
-obj.save()
-查询
-UserInfo.objects.all(条件)
-UserInfo.objects.filter(条件)
-UserInfo.objects.filter(条件).first() 单个对象
-UserInfo.objects.get(id=nid) 不常用 单个对象
-删除
-UserInfo.objects.all(条件).delete()
-UserInfo.objects.filter(条件).delete()
-UserInfo.objects.filter(条件).first().delete() 单个对象
-修改
-UserInfo.objects.all(条件).update(name='test')
-UserInfo.objects.filter(条件).update(name='test')
-UserInfo.objects.filter(条件).first()update(name='test') 单个对象
+
+    python manage.py makemigrations
+    python manage.py migrate
+    ----orm数据库基本操作
+    添加
+    UserInfo.objects.create(name=username) 最常用的
+    UserInfo.objects.create({'name':'xiaoming'})
+    UserInfo.objects.create(**dict)
+    obj=UserInfo(name=username)
+    obj.save()
+    查询
+    UserInfo.objects.all(条件)
+    UserInfo.objects.filter(条件)
+    UserInfo.objects.exclude(反条件)
+    UserInfo.objects.filter(条件).first() 单个对象
+    UserInfo.objects.filter(条件).count() 获取个数
+    UserInfo.objects.get(id=nid) 不常用 单个对象
+    删除
+    UserInfo.objects.all(条件).delete()
+    UserInfo.objects.filter(条件).delete()
+    UserInfo.objects.filter(条件).first().delete() 单个对象
+    修改
+    UserInfo.objects.all(条件).update(name='test')
+    UserInfo.objects.filter(条件).update(name='test')
+    UserInfo.objects.filter(条件).first()update(name='test') 单个对象
+    排序
+    UserInfo.objects.order_by()
+
 ----数据库类型
-字符串 CharField
-数字 IntegerField
-时间 DateTimeField
-二进制
-外键 ForeignKey
+
+    字符串 CharField
+    数字 IntegerField
+    时间 DateTimeField
+    二进制
+    外键 ForeignKey
+
 ----数据类型参数
-null=true --->db是否为空
-default --->默认值
-primary_key --->主键
-db_column  ---->列名,数据库中的列名
-db_index ---->索引
-unique ---->唯一索引
-unique_for_data ---->唯一时间索引
-unique_for_month ---->月
-unique_for_year ---->年
-auto_now ----> 创建的时间
-auto_now_add ----> 更新的时间(特定用法才生效,obj.save())
-choices ----> 替代选项 (元组)
-user_type_choice=((1,'超级用户'),(1,'普通用户'))
-blank ----> admin后台管理中的是否可以为空
-verbose_name ----> admin后台管理中的名称
-editable ----> admin input是否可以编辑
-error_messages ----> input错误信息
-help_text ----> input提示框
-validators ----> form自定义错误信息
+
+    null=true --->db是否为空
+    default --->默认值
+    primary_key --->主键
+    db_column  ---->列名,数据库中的列名
+    db_index ---->索引
+    unique ---->唯一索引
+    unique_for_data ---->唯一时间索引
+    unique_for_month ---->月
+    unique_for_year ---->年
+    auto_now ----> 创建的时间
+    auto_now_add ----> 更新的时间(特定用法才生效,obj.save())
+    choices ----> 替代选项 (元组)
+    user_type_choice=((1,'超级用户'),(1,'普通用户'))
+    blank ----> admin后台管理中的是否可以为空
+    verbose_name ----> admin后台管理中的名称
+    editable ----> admin input是否可以编辑
+    error_messages ----> input错误信息
+    help_text ----> input提示框
+    validators ----> form自定义错误信息
 
 ----数据库筛选条件
-id大于1的
-filter(id_gt=1)
-id大于等于1的
-filter(id_gt3=1)
-id小于1的
-filter(id_lt=1)
-id小于等于1的
-filter(id_lte=1)
-id小于等于1和名称为小明的
-filter(id_lte=1,name='xiaoming')
-filter_dict={'id_gt':1,'name':'xiaoming'}
-可传入筛选字典
-filter(**filter_dict)
 
-#获取的是对象
-UserInfo.objects.filter(条件).all()
-#获取的是字典
-UserInfo.objects.filter(条件).all().values('id','name')
-#获取的是元组
-UserInfo.objects.filter(条件).all().value_list('id','name')
-双下划线跨表查询
-UserInfo.objects.filter(条件).all().value_list('id','group__name')
+    id大于1的
+    filter(id_gt=1)
+    id大于等于1的
+    filter(id_gt3=1)
+    id小于1的
+    filter(id_lt=1)
+    id小于等于1的
+    filter(id_lte=1)
+    filter(id__in=[1,2,3])
+    id小于等于1和名称为小明的
+    filter(id_lte=1,name='xiaoming')
+    filter_dict={'id_gt':1,'name':'xiaoming'}
+    可传入筛选字典
+    filter(**filter_dict)
+
+----获取的是对象
+
+    UserInfo.objects.filter(条件).all()
+    #获取的是字典
+    UserInfo.objects.filter(条件).all().values('id','name')
+    #获取的是元组
+    UserInfo.objects.filter(条件).all().value_list('id','name')
+    双下划线跨表查询
+    UserInfo.objects.filter(条件).all().value_list('id','group__name')
 
 ----多对多(表结构)
-第一种方式
-    class Host(models.Model):
-        name=models.CharField(max_length=32)
-    class App(models.Model):
-        name=models.CharField(max_length=32)
-    class HostToApp(models.Model):
-        hobj=models.ForeignKey(to='Host',to_field='id')
-        aobj=models.ForeignKey(to='App',to_field='id')
-第二种方式
-    class Host(models.Model):
-        name=models.CharField(max_length=32)
-    class App(models.Model):
-        name=models.CharField(max_length=32)
-        r=models.ManyToManyField('Host')
+
+    第一种方式
+        class Host(models.Model):
+            name=models.CharField(max_length=32)
+        class App(models.Model):
+            name=models.CharField(max_length=32)
+        class HostToApp(models.Model):
+            hobj=models.ForeignKey(to='Host',to_field='id')
+            aobj=models.ForeignKey(to='App',to_field='id')
+    第二种方式
+        class Host(models.Model):
+            name=models.CharField(max_length=32)
+        class App(models.Model):
+            name=models.CharField(max_length=32)
+            r=models.ManyToManyField('Host')
+
 ----多对多(操作)
-obj=Models.App.objects.filter(id='1').first()
-#添加多对多
-obj.r.add(1)
-obj.r.add(1,2,3)
-obj.r.add(*[1,2,3])
-#移除一个对象(参数同上一样)
-obj.r.remove(1)
-#删除全部多对多
-obj.m.clear()
-#重新设置多对多(参数同上)
-obj.r.set(1)
-obj.r.set([1,2,3])
-#显示所有
-obj.r.all()
-#筛选
-obj.r.filter(name='abc')
+
+    obj=Models.App.objects.filter(id='1').first()
+    #添加多对多
+    obj.r.add(1)
+    obj.r.add(1,2,3)
+    obj.r.add(*[1,2,3])
+    #移除一个对象(参数同上一样)
+    obj.r.remove(1)
+    #删除全部多对多
+    obj.m.clear()
+    #重新设置多对多(参数同上)
+    obj.r.set(1)
+    obj.r.set([1,2,3])
+    #显示所有
+    obj.r.all()
+    #筛选
+    obj.r.filter(name='abc')
 

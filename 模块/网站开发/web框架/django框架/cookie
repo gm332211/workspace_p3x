@@ -11,25 +11,25 @@
     获取cookie
     $.cookie('the_cookie')
 -----cookie的参数
-键值对
-key
-value
---设置超时是时间
-max_age
---设置超时截止时间
-expires
---设置生效路径
-path='/'
---设置生效域名
-domain
---https传输
-secure=False
---设置js不能获取
-httponly=False
+    键值对
+    key
+    value
+    --设置超时是时间
+    max_age
+    --设置超时截止时间
+    expires
+    --设置生效路径
+    path='/'
+    --设置生效域名
+    domain
+    --https传输
+    secure=False
+    --设置js不能获取
+    httponly=False
 -----加密的cookie
-创建cookie
-url=reverse('users')
-re=redirect(url)
-re.set_signed_cookie('username','1','abcabc')
-获取cookie
-cookie=request.get_signed_cookie('username','abcabc')
+    创建cookie
+    url=reverse('users')
+    re=redirect(url)
+    re.set_signed_cookie('username','1','abcabc')
+    获取cookie
+    cookie=request.get_signed_cookie('username','abcabc')

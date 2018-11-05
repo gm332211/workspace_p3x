@@ -1,5 +1,15 @@
+request.body
+    request.POST post提交的数据
+    request.GET  get提交的数据
+    request.FILES 提交的文件数据
+
+requet.Meta
+    request.method
+    request.path_info
+    request.COOKIES
 request.environ 获取request内部数据
-request.POST post提交的数据
-request.GET  get提交的数据
-request.FILES 提交的文件数据
-request.COOKIES
+设置返回头和cookie
+response=HttpResponse('test')
+response['name']='xiaoming'
+response.set_cookie()
+return response

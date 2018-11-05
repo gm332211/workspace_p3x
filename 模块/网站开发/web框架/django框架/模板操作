@@ -1,62 +1,62 @@
 --------插入数据
-<div>{{user_data}}</div>
+    <div>{{user_data}}</div>
 列表
-<div>{{user_list.0}}</div>
+    <div>{{user_list.0}}</div>
 字典
-<div>{{user_dict.name}}</div>
+    <div>{{user_dict.name}}</div>
 --------循环
 列表循环
-{% for user in user_list %}
-    {{user.name}
-{% endfor %}
+    {% for user in user_list %}
+        {{user.name}
+    {% endfor %}
 字典循环
-{% for key in user_dict.keys %}
-{% for value in user_dict.values %}
-{% for key,value in user_dict.items %}
+    {% for key in user_dict.keys %}
+    {% for value in user_dict.values %}
+    {% for key,value in user_dict.items %}
 --------判断
-{% if name=='xiaoming'%}
-    {{user_data.0}}
-{% else%}
-    {{user_data.1}}
-{% endif%}
+    {% if name=='xiaoming'%}
+        {{user_data.0}}
+    {% else%}
+        {{user_data.1}}
+    {% endif%}
 --------模板循环计数
-计算循环的次数
-<td>{{ forloop.counter }}</td>
-从0开始
-<td>{{ forloop.counter0 }}</td>
-反计算
-<td>{{ forloop.revcounter }}</td>
-是否是第一个
-<td>{{ forloop.first }}</td>
-是否是最后一个
-<td>{{ forloop.laster }}</td>
-父类循环的计数
-<td>{{ forloop.parentloop.first }}</td>
+    计算循环的次数
+    <td>{{ forloop.counter }}</td>
+    从0开始
+    <td>{{ forloop.counter0 }}</td>
+    反计算
+    <td>{{ forloop.revcounter }}</td>
+    是否是第一个
+    <td>{{ forloop.first }}</td>
+    是否是最后一个
+    <td>{{ forloop.laster }}</td>
+    父类循环的计数
+    <td>{{ forloop.parentloop.first }}</td>
 --------模板继承
-声明模板(声明继承那个模板)
-{% extends 'index.html' %}
-替换模板块
-{% block tittle %}{% endblock %}
-{% block css %}{% endblock %}
-{% block main %}{% endblock %}
-{% block js %}{% endblock %}
-{% block css %}<style></style>{% endblock %}
-引入模板
-{% include 'tag.html' %}
+    声明模板(声明继承那个模板)
+    {% extends 'index.html' %}
+    替换模板块
+    {% block tittle %}{% endblock %}
+    {% block css %}{% endblock %}
+    {% block main %}{% endblock %}
+    {% block js %}{% endblock %}
+    {% block css %}<style></style>{% endblock %}
+    引入模板
+    {% include 'tag.html' %}
 --------自定义模板函数(simple_tag) 优点参数不限,缺点不能if判断
-在app目录下创建templatetags
-在templatetags下创建一个工具py
-创建函数
-    from django import template
-    register=template.Library()
-    @register.simple_tag
-    def test(a,b):
-        return a*b
-模板中使用函数
-{% load 'tools'}
-{% test 1 2 %}
+    在app目录下创建templatetags
+    在templatetags下创建一个工具py
+    创建函数
+        from django import template
+        register=template.Library()
+        @register.simple_tag
+        def test(a,b):
+            return a*b
+    模板中使用函数
+    {% load 'tools'}
+    {% test 1 2 %}
 --------自定义模板函数(filter) 优点可以使用if判断,缺点参数有二个
-@register.filter
-def filtertest(a,b):
-    return a*b
-<div>{{ 3|filtertest:2 }}</div>
+    @register.filter
+    def filtertest(a,b):
+        return a*b
+    <div>{{ 3|filtertest:2 }}</div>
