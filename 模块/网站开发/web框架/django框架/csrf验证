@@ -1,0 +1,40 @@
+-----form表单提交
+    {% csrf_token %}
+
+
+-----ajax提交
+    单个ajax
+    $.ajax({
+        url:'http://127.0.0.1:8080/cmdb/users',
+        type:'POST',
+        data:{'username':'aaaaa'},
+        dataType:'json',
+        traditional:true,
+        header:{'X-CSRFtoken':$.cookie('csrftoken')},
+        success:function (data) {
+        }
+
+    })
+    整个网页csrf提交
+    $(function () {
+        $.ajaxSetup({
+            beforeSend: function (xhr, setting) {
+                xhr.setRequestHeader('X-CSRFtoken', $.cookie('csrftoken'))
+            }
+        });
+    });
+    细分token提交
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+------装饰器单个使用或者弃用csrf
+@csrf_protect，为当前函数强制设置防跨站请求伪造功能，即便settings中没有设置全局中间件。
+@csrf_exempt，取消当前函数防跨站请求伪造功能，即便settings中设置了全局中间件。
