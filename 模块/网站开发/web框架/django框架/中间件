@@ -1,0 +1,20 @@
+----中间件过滤全部的请求
+    from django.utils.deprecation import MiddlewareMixin
+    #ip黑名单过滤
+    class IpFilter(MiddlewareMixin):
+        def process_request(self,request):
+            pass
+        def process_view(self,request,view_func,view_func_args,view_func_kwagrs):
+            pass
+        def process_response(self,request,response):
+            pass
+            return response
+        def process_exception(self,request,exception):
+            return HttpResponse('出现异常')
+        #views报错统一处理
+----settings中设置
+    MIDDLEWARE = ['Middle.m1.IpFilter']
+-----流程
+    用户请求---->process_request------>url------>process_view------>views------->process_resopnes------>用户
+                                                                    views报错------->process_exception-------->用户(exception处理页面)
+                                                                    views报错------->process_exception没有返回-------->用户(报错页面)
