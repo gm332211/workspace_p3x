@@ -1,34 +1,33 @@
-#FBV(function base view)
-def login(request):
-    return HttpResponse('ok')
+----FBV(function base view)
+    def login(request):
+        return HttpResponse('ok')
 
-#CBV(class base view)
-from django.views import View
-class Home(View):
-    #反射方法基类
-    def dispatch(self, request, *args, **kwargs):
-        #初始化函数
-        return super(Home,self).dispatch(request,*args,**kwargs)
+----CBV(class base view)
+    from django.views import View
+    class Home(View):
+        #反射方法基类
+        def dispatch(self, request, *args, **kwargs):
+            #初始化函数
+            return super(Home,self).dispatch(request,*args,**kwargs)
 
-    def get(self,request):
-        return HttpResponse('this is get method')
-    def post(self,request):
-        return HttpResponse('this is post method')
-
-返回方式
+        def get(self,request):
+            return HttpResponse('this is get method')
+        def post(self,request):
+            return HttpResponse('this is post method')
+    CBV在url中的写法
+    url(r'^home',views.Home.as_view())
+----返回方式
     return HttpResponse('字符串')
     return render(request,'login.html',{'user_data':user_data})
     return redirect('https://github.com/')
 
-url(r'^home',views.Home.as_view())
-
-数据处理
-获取单个值
-username=request.POST.get('username')
-获取列表
-user_list=request.POST.getlist('users')
-获取文件对象
-file_obj=request.POST.File.get('file_name')
-file_obj.name
-file_obj.size
-file_obj.chunks
+----数据处理
+    获取单个值
+    username=request.POST.get('username')
+    获取列表
+    user_list=request.POST.getlist('users')
+    获取文件对象
+    file_obj=request.POST.File.get('file_name')
+    file_obj.name
+    file_obj.size
+    file_obj.chunks

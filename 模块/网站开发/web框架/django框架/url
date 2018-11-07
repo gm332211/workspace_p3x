@@ -1,30 +1,31 @@
-普通的url
-url(r'^index', views.index),
-带有正则表达式的url
-url(r'^users/(/d+)', views.index),
-带有分组正则表达式的url
-url(r'^users/(?P<nid>/d+)', views.users),
-使用name构建url
-url(r'^users/(?P<nid>/d+)', views.users,name=users),
------views 中使用url
-from django.shortcuts import reverse
-url=reverse('index')
-针对url中的参数
-url=reverse('index',args=(1,2),kwargs={'nid':'1','uid':'2'})
------模板中使用url
-{% url 'index'%}
-针对url中的参数
-{% url 'index' 1 2 nid=1 uid=2 %}
-获取当前的url
-{{ request.path_info }}
------路由的分发
-from django.conf.urls import include
-url(r'^cmdb/',include('cmdb.urls')),
------命名空间(当有两个想同的include,不同的app)
-from django.conf.urls import include
-url(r'^cmdb/',include('cmdb.urls'),namespace='cmdb'),
-url(r'^app/',include('cmdb.urls'),namespace='app'),
-views中使用反射
-reverse('cmdb:index')
-模板中的使用
-{% url 'cmdb:index' %}
+----url构建
+    普通的url
+    url(r'^index', views.index),
+    带有正则表达式的url
+    url(r'^users/(/d+)', views.index),
+    带有分组正则表达式的url
+    url(r'^users/(?P<nid>/d+)', views.users),
+    使用name构建url
+    url(r'^users/(?P<nid>/d+)', views.users,name=users),
+----views 中使用url
+    from django.shortcuts import reverse
+    url=reverse('index')
+    针对url中的参数
+    url=reverse('index',args=(1,2),kwargs={'nid':'1','uid':'2'})
+----模板中使用url
+    {% url 'index'%}
+    针对url中的参数
+    {% url 'index' 1 2 nid=1 uid=2 %}
+    获取当前的url
+    {{ request.path_info }}
+----路由的分发
+    from django.conf.urls import include
+    url(r'^cmdb/',include('cmdb.urls')),
+----命名空间(当有两个想同的include,不同的app)
+    from django.conf.urls import include
+    url(r'^cmdb/',include('cmdb.urls'),namespace='cmdb'),
+    url(r'^app/',include('cmdb.urls'),namespace='app'),
+    views中使用反射
+    reverse('cmdb:index')
+    模板中的使用
+    {% url 'cmdb:index' %}
