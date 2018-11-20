@@ -1,35 +1,66 @@
 from django.utils.safestring import mark_safe
+
+
+# 分页类
 class Pag():
-    def __init__(self,data_len,current_pag,set_num,pag_num):
-        self.data_len=data_len
-        self.set_num = set_num
+    # 初始化分页,data_len(数据长度),current_pag(当前页码),set_num(一页显示数),pag_num(页码的数量)
+    def __init__(self, data_len, current_pag, set_num=20, pag_num=7):
+        self.data_len = data_len
+        self.set_num = int(set_num)
         self.pag_num = pag_num
-        self.current_pag=current_pag
+        if current_pag:
+            self.current_pag = int(current_pag)
+        else:
+            self.current_pag = 1
+
+    # 获取当前页的列表的下标
     @property
     def start(self):
         self.v_current_pag()
-        return (self.current_pag-1)*self.set_num
+        if self.whe_page:
+            return (self.current_pag - 1) * self.set_num
+        else:
+            return 0
+
     @property
     def end(self):
         self.v_current_pag()
-        return self.current_pag * self.set_num
+        if self.whe_page:
+            return self.current_pag * self.set_num
+        else:
+            return self.data_len
+
+    # 获取总页数
     @property
     def total_pag(self):
         v, remainder = divmod(self.data_len, self.set_num)
         if remainder:
             v += 1
         return v
+
+    # 校验当前页码是否真确
     def v_current_pag(self):
-        if self.current_pag<1:
-            self.current_pag=1
-        elif self.current_pag>self.total_pag:
-            self.current_pag=self.total_pag
-    def page_str(self,base_url):
+        if self.current_pag < 1:
+            self.current_pag = 1
+        elif self.current_pag > self.total_pag:
+            self.current_pag = self.total_pag
+
+    # 判断是否分页
+    @property
+    def whe_page(self):
+        if self.set_num < self.data_len:
+            return True
+        else:
+            return False
+
+    # 生成分页链接标签
+    def page_str(self, base_url):
+        page_dic = {}
         page_list = []
         self.v_current_pag()
         total_page = self.total_pag
-        start_page=self.current_pag - int(self.pag_num / 2)
-        end_page=self.current_pag + int(self.pag_num / 2)
+        start_page = self.current_pag - int(self.pag_num / 2)
+        end_page = self.current_pag + int(self.pag_num / 2)
         if self.current_pag:
             if start_page <= 1:
                 start_page = 1
@@ -38,23 +69,66 @@ class Pag():
                     end_page = total_page
             elif end_page > total_page:
                 start_page += total_page - end_page
+                if start_page<1:
+                    start_page=1
                 end_page = total_page
+        choice_num = '''<select name="" id="choice_page" style="width:60px;margin-bottom:2px;height:30px;">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="40">40</option>
+            <option value="100">100</option>
+            </select>'''
+        page_list.append(choice_num)
+        head = '<a href="%s?p=%s" class="page page_init">首页</a>' % (base_url, '1')
+        page_list.append(head)
         if self.current_pag - 1 < 1:
             pre = '<a href="#" class="page page_init">上一页</a>'
         else:
-            pre = '<a href="%s?p=%s" class="page page_init">上一页</a>' % (base_url,self.current_pag - 1)
+            pre = '<a href="%s?p=%s" class="page page_init">上一页</a>' % (base_url, self.current_pag - 1)
         page_list.append(pre)
         for i in range(start_page, end_page + 1):
             if self.current_pag == i:
-                page_str = '<a href="%s?p=%s" class="page page-active">%s</a>' % (base_url,i, i)
+                page_str = '<a href="%s?p=%s" class="page page-active">%s</a>' % (base_url, i, i)
             else:
-                page_str = '<a href="%s?p=%s" class="page page_init">%s</a>' % (base_url,i, i)
+                page_str = '<a href="%s?p=%s" class="page page_init">%s</a>' % (base_url, i, i)
             page_list.append(page_str)
         if self.current_pag + 1 > total_page:
             next = '<a href="#" class="page page_init">下一页</a>'
         else:
-            next = '<a href="%s?p=%s" class="page page_init">下一页</a>' % (base_url,self.current_pag + 1)
+            next = '<a href="%s?p=%s" class="page page_init">下一页</a>' % (base_url, self.current_pag + 1)
+        tail = '<a href="%s?p=%s" class="page page_init">尾页</a>' % (base_url, self.total_pag)
+        skip = '<input type="text" id="page_input" style="width:40px;margin-bottom:2px;height:20px;"><a class="page page_init" id="page_go">GO</a>'
+        jq = '''
+        <script>
+            $(function () {
+                $('#page_input').val($('.page-active').text());
+                var choice_page=$.cookie('choice_page');
+                if(!choice_page){
+                    choice_page=%s
+                }
+                console.log(choice_page);
+                $('#choice_page').val(choice_page);
+            });
+            $('#page_go').click(function () {
+                location.href='%s'+'?p='+$('#page_input').val();
+            })
+            $('#choice_page').change(function () {
+                 var  choicePage=$(this).val();
+                 $.cookie('choice_page',choicePage,{path:'%s'});
+                 location.reload();
+            });
+        </script>
+        ''' % (self.set_num,base_url,base_url)
         page_list.append(next)
+        page_list.append(tail)
+        page_list.append(skip)
         page_a = ''.join(page_list)
         page_a = mark_safe(page_a)
-        return page_a
+        jq = mark_safe(jq)
+        if self.whe_page:
+            page_dic['a'] = page_a
+            page_dic['js'] = jq
+        else:
+            page_dic['a'] = ''
+            page_dic['js'] = ''
+        return page_dic

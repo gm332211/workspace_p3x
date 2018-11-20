@@ -1,0 +1,70 @@
+----创建modelform
+    from adminlte import models
+    from django import forms
+    class UserModelForm(forms.ModelForm):
+        #验证不保存数据库的字段同from的字段同样
+        is_rmb=ffields.CharField(widget=fwidgets.CheckboxInput()
+        class Meta:
+            model=models.User
+            #显示所有字段
+            fields='__all__'
+            #显示指定字段
+            # fields=['name','group']
+            #排除指定字段
+            # exclude=['name']
+        #自定义钩子
+        def clean_username(self):
+            obj=self.cleaned_data['username']
+            return obj
+----使用modelform验证
+    obj=model_form.UserModelForm()
+    print(obj)
+    if request.method=='POST':
+        obj=model_form.UserModelForm(request.POST)
+        if obj.is_valid():
+            obj.save()
+    return render(request,'adminlit/test.html',{'obj':obj})
+----modelfrom内部属性自定义
+    from django.forms import widgets as fwidgets
+    from django.forms import fields as ffields
+    自定义标签名
+    labels={
+        'username':'用户名'
+    }
+    提示帮助信息
+    help_texts={
+        'username':'....'
+    }
+    自定义页面标签
+    widgets={
+        'username':fwidgets.TextInput(attr={'class':'c1')
+    }
+    自定义错误信息
+    error_messages={
+        'username':{'required':'用户名不能为空'}
+    }
+    自定义验证
+    field_classes={
+        'email':ffields.URLField
+    }
+    本地化
+    localized_fields=('test',)
+----modelfrom保存数据
+    obj=model_form.UserModelForm(request.POST)
+        if obj.is_valid():
+            #保存
+            obj.save()
+            #第二种保存方法
+            mf=obj.save(False)
+            mf.save()
+            mf.save_m2m()
+----modelfrom更新数据
+    user_obj=models.User.objects.filter(id=1).first()
+    obj=model_form.UserModelForm(request.POST,instance=user_obj)
+        if obj.is_valid():
+            #保存
+            obj.save()
+            #第二种保存方法
+            mf=obj.save(False)
+            mf.save()
+            mf.save_m2m()

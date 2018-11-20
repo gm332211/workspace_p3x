@@ -36,7 +36,7 @@
     修改
     UserInfo.objects.all(条件).update(name='test')
     UserInfo.objects.filter(条件).update(name='test')
-    UserInfo.objects.filter(条件).first()update(name='test') 单个对象
+    UserInfo.objects.filter(条件).first().update(name='test') 单个对象
     排序
     UserInfo.objects.order_by()
 
