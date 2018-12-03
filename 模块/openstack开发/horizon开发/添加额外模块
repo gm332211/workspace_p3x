@@ -25,3 +25,4 @@
     msgstr "预约"
     生效
     python manage.py compilemessages
+    
