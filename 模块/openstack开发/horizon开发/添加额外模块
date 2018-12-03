@@ -1,0 +1,27 @@
+1.devstack远程环境调试
+    pycharm远程连接devstack
+    下载远程devstack代码
+    设置django运行
+2.设置/opt/stack/horizon/openstack_dashboard/local/local_settings.py
+    WEBROOT="/"
+    COMPRESS_OFFLINE=False
+3.添加project里内置模块/opt/stack/horizon/openstack_dashboard/enabled/_1040_project_order_panel.py (根据porject命名规则 _1000_project.py)
+    PANEL = 'order'
+    PANEL_DASHBOARD = 'project'
+    PANEL_GROUP = 'compute'
+    ADD_PANEL = 'openstack_dashboard.dashboards.project.order.panel.Order'
+4.添加内置模块文件
+    ├── __init__.py
+    ├── panel.py
+    ├── templates
+    │   └── order
+    │       └── index.html
+    ├── tests.py.tmpl
+    ├── urls.py
+    └── views.py
+5.国际化openstack_dashboard/locale/zh_CN/LC_MESSAGES/django.po
+    添加
+    msgid "Order"
+    msgstr "预约"
+    生效
+    python manage.py compilemessages
