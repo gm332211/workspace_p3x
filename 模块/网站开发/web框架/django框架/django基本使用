@@ -1,6 +1,6 @@
 --创建django
     创建django 项目
-    python manage.py startproject mydjango
+    django-admin.py startproject mydjango
     创建django app
     python manage.py startapp myapp
     生成数据库日志
