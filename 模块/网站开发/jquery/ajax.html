@@ -9,27 +9,36 @@
 </body>
 <script src="jquery-1.12.4.js"></script>
 <script>
+    $(function () {
+        $.ajaxSetup({
+            beforeSend: function (xhr, setting) {
+                xhr.setRequestHeader('X-CSRFtoken', $.cookie('csrftoken'))
+            }
+        });
+    });
+
     //url 请求的地址 type:请求的类型,data,请求的数据,datatype请求数据的类型,success成功后的处理
     //data:$(this).serialize(), 可以获取form信息 traditional:true,传输列表
     //刷新和跳转location.reload(); location.href='/cmdb/a';
     $.ajax({
-        url:'http://127.0.0.1:8080/cmdb/users',
-        type:'POST',
-        data:{'username':'aaaaa'},
-        dataType:'json',
-        traditional:true,
-        success:function (data) {
-            var obj=JSON.parse(data);
-            if (obj['status']==201){
+        url: 'http://127.0.0.1:8080/cmdb/users',
+        type: 'POST',
+        data: {'username': 'aaaaa'},
+        dataType: 'json',
+        traditional: true,
+        header: {'X-CSRFtoken': $.cookie('csrftoken')},
+        success: function (data) {
+            var obj = JSON.parse(data);
+            if (obj['status'] == 201) {
                 alert('正确');
                 console.log(obj['data']);
 
-            }else{
+            } else {
                 alert(obj['error'])
             }
         },
-        error:function () {
-            
+        error: function () {
+
         }
 
     })
