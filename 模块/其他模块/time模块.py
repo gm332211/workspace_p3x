@@ -36,5 +36,5 @@ print(a)
 print(b)
 print(type(b))
 
-start_time = time.strftime('%Y-%m-%d %H:%M:%S', db_obj.start_time)
-stop_time = time.strftime('%Y-%m-%d %H:%M:%S', db_obj.stop_time)
+# start_time = time.strftime('%Y-%m-%d %H:%M:%S', db_obj.start_time)
+# stop_time = time.strftime('%Y-%m-%d %H:%M:%S', db_obj.stop_time)

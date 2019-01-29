@@ -4,7 +4,7 @@
 # f=open('file_test.text','r',encoding='utf8')#只读打开文件
 # f=open('file_test.text','w',encoding='utf8')#写的方式打开文件(有这个文件就会覆盖)
 # f=open('file_test.text','a',encoding='utf8')#追加的方式打开文件(append)
-# f=open('file_test.text','r+',encoding='utf8')#读写方式,先读后写,写入以追加的模式
+f=open('file_test.text','r+',encoding='utf8')#读写方式,先读后写,写入以追加的模式
 # f=open('file_test.text','w+',encoding='utf8')#写读,先写后读,写入以覆盖的方式
 # f=open('file_test.text','a+',encoding='utf8')#追加读,
 # f=open('file_test.text','rb',encoding='utf8')#以二进制的形式读取文件
@@ -12,8 +12,6 @@
 # f=open('file_test.text','ab',encoding='utf8')#以二进制的形式追加文件
 # f=open('file_test.text','rU',encoding='utf8')#适配windows和linux的换行
 # f=open('file_test.text','r+U',encoding='utf8')#适配windows和linux的换行
-
-
 #文件写入
 f.write('床前明月光,\n疑是地上霜,\n举头望明月,\n低头思故乡.')#写入
 f.writelines(['1','2','3'])#以类表的形式写入数据
